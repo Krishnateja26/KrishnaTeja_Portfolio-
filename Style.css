@@ -89,7 +89,12 @@
         background: 
             radial-gradient( circle at 70% 30%, var(--accent-glow), transparent 35%),
             linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.55)), 
-            url("hero-bg.jpg");
+            url("hero-bg.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+        overflow: hidden;
     }
 
     .hero-content h1 {
@@ -112,11 +117,23 @@
         padding-right: 5rem;
     }
 
-    .hero-image {
-        flex:1;
-        text-align: center;
+    .hero {
         position: relative;
+        min-height: 100vh;
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
     }
+
+    .hero-img {
+        position: absolute;
+        inset: 0;
+        background: url("Used-Images/hero-bg.png") center / cover no-repeat;
+        z-index: -1;
+    }
+      
+      
 
     .profile-img {
         width:380px;
@@ -247,7 +264,13 @@
 
         /* reset centering rules */
         .skills-card {
-            grid-column: auto !important;
+            grid-column: auto;
+        }
+        /* CENTER single item in last row */
+        .skills-card:last-child:nth-child(2n + 1) {
+            grid-column: 1 / -1;
+            justify-self: center;
+            max-width: 320px;
         }
     }
 
@@ -255,6 +278,9 @@
     @media (max-width: 600px) {
         .skills-grid {
             grid-template-columns: 1fr;
+        }
+        .skills-card {
+            max-width: 100%;
         }
     }
 
@@ -266,11 +292,23 @@
         font-size: 1.2rem;
         color: var(--text-muted);
         background: transparent;
-        border-top: none; /* removes line */
         /*background: var(-bg--darker);*/
         border-top: 1px solid rgba(255,255,255,0.15);
+        /* key lines */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
-
+    @media (max-width: 480px) {
+        footer {
+            font-size: 0.95rem;
+        }
+    }
+    footer p {
+        margin: 0;
+        white-space: nowrap;
+    }
+    
 
     .social-links {
         margin-top: 3rem;
@@ -309,7 +347,11 @@
             flex-direction: column;
             text-align: center;
             padding-top: 8rem;
+            min-height: 100svh; /* mobile-safe viewport */
+            background-position: top center;
         }
+        
+          
 
     .hero-content {
         padding-right: 0;
@@ -1012,7 +1054,7 @@ section {
     background:
         radial-gradient(circle at 30% 20%, rgba(46,204,113,0.45), transparent 45%),
         linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.55)),
-        url("hero-bg.jpg");
+        url("hero-bg.png");
 
     background-size: cover;
     background-position: center;
@@ -1148,8 +1190,9 @@ section {
     position: relative;
     padding: 6rem 5%;
     background-size: cover;
-    background-position: center;
-    background-attachment: fixed; /* cinematic */
+    background-position: center; /* cinematic */
+    /* ensures visibility on mobile */
+    background-attachment: scroll;
 }
 
 /* ========= Reveal effect =====
@@ -1347,7 +1390,20 @@ section {
         font-size: 3.5rem;
     }
 }
+@media (max-width: 768px) {
 
+    .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr;   /* one card per row */
+        gap: 20px;
+        justify-items: center;
+    }
+
+    .contact-card {
+        width: 90%;
+        max-width: 360px;
+    }
+}
 
 /* ================= CARDS ================= */
 .edu-card,
@@ -1459,10 +1515,16 @@ body {
 
 .section-bg {
     position: relative;
+    min-height: 100vh;
     padding: 7rem 0;
     background:
         radial-gradient(circle at 30% 20%, rgba(46,204,113,0.12), transparent 50%),
         linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.9));
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* mobile-first */
+    background-attachment: scroll;
 }
 
 .section-bg > * {
@@ -1533,6 +1595,21 @@ section::after {
     bottom: 0;
 }
 
+@media (min-width: 1024px) {
+    .section-bg {
+        background-attachment: fixed;
+    }
+}
+@media (max-width: 768px) {
+    .section-bg {
+      min-height: 100svh; /* mobile-safe viewport */
+      background-size: cover;
+      background-position: center;
+    }
+  }
+  
+
+
 /* ================= SECTION BACKGROUNDS ================= */
 #home       { background-image: url("Used-Images/hero-bg.png");}
 #about      { background: url("Used-Images/about-bg.jpg") center/cover fixed; }
@@ -1543,7 +1620,7 @@ section::after {
 #contact    { background: url("Used-Images/contact-bg.jpg") center/cover fixed; }
 
 #home {
-    background-attachment: fixed;
+    background-attachment: scroll;
 }
 #home .intro-name-big {
     color: #ffffff !important;
@@ -1566,6 +1643,4 @@ section li {
         -1px  1px 0 #000,
          1px  1px 0 #000;
 }  
-
-
 
