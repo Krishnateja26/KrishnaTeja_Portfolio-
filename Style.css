@@ -611,25 +611,6 @@
         0 0 25px var(--accent-glow);
 }
 
-section:not(#home) {
-    filter: brightness(1.2) contrast(0.9);
-    position: relative;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-/* Subtle wallpaper dulling – divider-style */
-section:not(#home)::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        rgba(0,0,0,0.35),
-        rgba(0,0,0,0.45)
-    );
-    z-index: 0;
-}
-
 section > * {
     position: relative;
     z-index: 1;
@@ -1463,51 +1444,6 @@ section {
     overflow: hidden;
 }
 
-/*
-section::before,
-section::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 80px;
-    pointer-events: none;
-    z-index: 1;
-}
-
-section::before {
-    top: 0;
-    background: linear-gradient(
-        to bottom,
-        rgba(0,0,0,0.95),
-        rgba(0,0,0,0)
-    );
-}
-
-section::after {
-    bottom: 0;
-    background: linear-gradient(
-        to top,
-        rgba(0,0,0,0.95),
-        rgba(0,0,0,0)
-    );
-}
-
-.section-bg::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background:
-        linear-gradient(
-            to bottom,
-            rgba(0,0,0,0.9),
-            rgba(0,0,0,0.35),
-            rgba(0,0,0,0.9)
-        );
-    z-index: 0;
-}
-*/
-
 body {
     background: #0a0a0a;
     color: #eaeaea;
@@ -1527,12 +1463,18 @@ body {
     background-attachment: scroll;
 }
 
+.section-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35); /* desktop */
+    z-index: 0;
+}
+
 .section-bg > * {
     position: relative;
     z-index: 1;
 }
-
-
 
 .section-divider {
     height: 1px;
@@ -1546,20 +1488,7 @@ body {
     );
 }
 
-section::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background:
-        linear-gradient(
-            to bottom,
-            rgba(0,0,0,0.85),
-            rgba(0,0,0,0.45) 20%,
-            rgba(0,0,0,0.45) 80%,
-            rgba(0,0,0,0.85)
-        );
-    z-index: 0;
-}
+
 
 section > * {
     position: relative;
@@ -1575,8 +1504,9 @@ section::before,
 section::after {
     content: "";
     position: absolute;
-    left: 10%;
-    width: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
     height: 2px;
     background: linear-gradient(
         to right,
@@ -1584,8 +1514,10 @@ section::after {
         var(--accent),
         transparent
     );
-    box-shadow: 0 0 15px var(--accent-glow);
+    box-shadow: 0 0 12px var(--accent-glow);
+    pointer-events: none;
 }
+
 
 section::before {
     top: 0;
@@ -1600,14 +1532,30 @@ section::after {
         background-attachment: fixed;
     }
 }
+
 @media (max-width: 768px) {
     .section-bg {
-      min-height: 100svh; /* mobile-safe viewport */
-      background-size: cover;
-      background-position: center;
+        min-height: 100svh; /* mobile-safe viewport */
+        background-size: cover;
+        background-position: center;
     }
-  }
-  
+
+    /* Mobile-friendly wallpaper dim */
+    .section-bg::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.15); /* lighter overlay so wallpaper shows */
+        z-index: 0;
+    }
+
+    section::before,
+    section::after {
+        width: 90%;
+        height: 1.5px;
+    }
+}
+
 
 
 /* ================= SECTION BACKGROUNDS ================= */
@@ -1644,3 +1592,24 @@ section li {
          1px  1px 0 #000;
 }  
 
+#about,
+#education,
+#skills,
+#experience,
+#projects,
+#contact {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll; /* default */
+}
+@media (min-width: 1024px) {
+    #about,
+    #education,
+    #skills,
+    #experience,
+    #projects,
+    #contact {
+        background-attachment: fixed;
+    }
+}
