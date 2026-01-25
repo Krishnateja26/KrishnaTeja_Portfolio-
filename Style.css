@@ -1535,7 +1535,7 @@ section::after {
 
 /* ================= SECTION BACKGROUNDS ================= */
 #home       { background-image: url("Used-Images/hero-bg.png");}
-#about      { background: url("about-bg.jpg") center/cover fixed; }
+#about      { background: url("Used-Images/about-bg.jpg") center/cover fixed; }
 #education  { background: url("Used-Images/education-bg.jpg") center/cover fixed; }
 #skills     { background: url("Used-Images/skills-bg.avif") center/cover fixed; }
 #experience { background: url("Used-Images/experience-bg.jpg") center/cover fixed; }
@@ -1566,5 +1566,6 @@ section li {
         -1px  1px 0 #000,
          1px  1px 0 #000;
 }  
+
 
 
