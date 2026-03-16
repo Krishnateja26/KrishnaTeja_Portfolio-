@@ -1,25 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>My Portfolio</title>
-        <link rel="stylesheet" href="Style.css">
-        <!-- Link to fontawesome for inserting social media icons -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
-        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" 
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <!-- Link to css file -->
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+
+    <link rel="stylesheet" href="Style.css">
+
+    <!-- Link to fontawesome for inserting social media icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    >
+    <!-- Link to css file -->
+</head>
+
 <body>
     <div class="cursor-glow"></div>
+
     <!-- Navigation -->
     <nav class="navbar">
-        <a href="#home" class="logo">Krishna Teja Portfolio</a>
+        <a href="#home" class="logo">
+            <img src="Used-Images/kt-logo.png" alt="KT logo" class="logo-icon">
+            <span>Krishna Teja Portfolio</span>
+</a>
+
         <div class="menu-toggle">
             <i class="fa-solid fa-bars menu-open"></i>
             <i class="fa-solid fa-xmark menu-close"></i>
-        </div>        
+        </div>
+
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About Me</a></li>
@@ -35,73 +48,70 @@
     <section id="home" class="hero center-hero">
         <div class="hero-content-center">
             <h2 class="intro-hi">HELLO 👋</h2>
-    
+
             <h1 class="intro-name-big">
                 <span class="im">I'm </span><span>KRISHNA TEJA</span>
             </h1>
-    
+
             <h3 class="typing-text">
                 I'm <span id="typing"></span>
             </h3>
-    
-            <p class="sub-text">Graduate Student</p>
+
+            <p class="sub-text">Data Science Graduate</p>
             <p class="welcome-text">Welcome to my portfolio</p>
-    
+
             <a href="#contact" class="cta-button">Let’s Connect</a>
         </div>
     </section>
-    
 
     <!-- About me section -->
     <section id="about" class="section-bg">
         <div class="about-container">
             <div class="about-content">
-    
                 <!-- LEFT COLUMN -->
                 <div class="about-left">
                     <h2 class="section-title"><span>About Me</span></h2>
-    
+
                     <div class="about-text-box">
                         <p>
-                            I’m a recent grad Master’s student in Data Science at University of Maryland, Baltimore County with a strong academic foundation in machine learning, statistics, and data analytics. I’ve worked on real-world projects involving deep learning, NLP, and large-scale data analysis, including CNN-based healthcare prediction models, spam detection systems, and data-driven studies using PySpark. I’m skilled in Python, SQL, ETL pipelines, Tableau, and Power BI, and enjoy transforming complex data into meaningful insights that support informed decision-making.
+                            I’m a recent Master’s graduate in Data Science from the University of Maryland, Baltimore County with a strong academic foundation in machine learning, statistics, and data analytics. I’ve worked on real-world projects involving deep learning, NLP, and large-scale data analysis, including CNN-based healthcare prediction models, spam detection systems, and data-driven studies using PySpark. I’m skilled in Python, SQL, ETL pipelines, Tableau, and Power BI, and enjoy transforming complex data into meaningful insights that support informed decision-making.
                         </p>
+
                         <br>
+
                         <p>
                             Beyond technical skills, I bring strong leadership, collaboration, and communication abilities. I worked as a Math Coach at UMBC, supporting students through personalized learning strategies, and I’ve previously served as General Secretary and Student Placement Coordinator, helping peers succeed academically and professionally. I’m a focused, adaptable team player who stays optimistic under pressure and is passionate about using data and AI to solve real-world problems with impact.
                         </p>
                     </div>
                 </div>
-    
+
                 <!-- RIGHT COLUMN -->
                 <div class="about-image">
                     <img src="Used-Images/Krishna Teja Profile.png" alt="About Image">
                 </div>
-    
             </div>
         </div>
     </section>
-    
-    
 
     <!-- Education Section -->
     <section id="education" class="section-bg">
         <h2 class="section-title"><span>Education</span></h2>
-    
+
         <div class="edu-grid">
             <div class="edu-card">
                 <img src="Used-Images/UMBC Logo.png" alt="UMBC">
                 <h3>University of Maryland, Baltimore County</h3>
-                <span>MS in Data Science (2024–2025)</span>
+                <span>MS in Data Science (Jan 2024– Dec 2025)</span>
                 <p>
                     Advanced coursework in machine learning, statistics, data management,
                     and AI-driven analytics with hands-on projects.
                 </p>
             </div>
-    
+
             <div class="edu-card">
                 <img src="Used-Images/SVUCE Logo.png" alt="SVU College">
                 <h3>SVU College of Engineering</h3>
-                <span>B.Tech in Electronics & Communication Engineering (2019–2023)</span>
+                <span>B.Tech in Electronics & Communication Engineering ( Aug 2019– May 2023)</span>
                 <p>
                     Built strong foundations in engineering, problem-solving, teamwork,
                     and leadership through academic and extracurricular roles.
@@ -110,87 +120,81 @@
         </div>
     </section>
 
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <h2 class="section-title"><span>Technical Skills</span></h2>
 
-<!-- Skills Section -->
-<section id="skills" class="skills">
-    <h2 class="section-title"><span>Technical Skills</span></h2>
+        <div class="skills-grid">
+            <!-- 1. Programming & Data -->
+            <div class="skills-card">
+                <i class="fa-solid fa-code"></i>
+                <h3>Programming & Data</h3>
+                <p>Python (Pandas, NumPy, Scikit-learn), SQL (MySQL), PySpark</p>
+            </div>
 
-    <div class="skills-grid">
+            <!-- 2. Machine Learning -->
+            <div class="skills-card">
+                <i class="fa-solid fa-brain"></i>
+                <h3>Machine Learning</h3>
+                <p>Regression, Classification, Tree-Based Models, Naive Bayes, Feature Engineering, Model Evaluation</p>
+            </div>
 
-        <!-- 1. Programming & Data -->
-        <div class="skills-card">
-            <i class="fa-solid fa-code"></i>
-            <h3>Programming & Data</h3>
-            <p>Python (Pandas, NumPy, Scikit-learn), SQL (MySQL), PySpark</p>
+            <!-- 3. Deep Learning -->
+            <div class="skills-card">
+                <i class="fa-solid fa-network-wired"></i>
+                <h3>Deep Learning</h3>
+                <p>CNNs, Neural Networks, Transfer Learning, Model Training & Optimization</p>
+            </div>
+
+            <!-- 4. Natural Language Processing -->
+            <div class="skills-card">
+                <i class="fa-solid fa-language"></i>
+                <h3>Natural Language Processing</h3>
+                <p>Hugging Face, ClinicalBERT, Tokenization, Text Preprocessing, Embeddings</p>
+            </div>
+
+            <!-- 5. Generative AI & LLMs -->
+            <div class="skills-card">
+                <i class="fa-solid fa-robot"></i>
+                <h3>Generative AI & LLMs</h3>
+                <p>Prompt Engineering, LLMs, RAG, Vector Databases (ChromaDB), LlamaIndex</p>
+            </div>
+
+            <!-- 6. Data Engineering & Big Data -->
+            <div class="skills-card">
+                <i class="fa-solid fa-database"></i>
+                <h3>Data Engineering & Big Data</h3>
+                <p>ETL/ELT Pipelines, Data Warehousing, Data Modeling, Apache Spark</p>
+            </div>
+
+            <!-- 7. Data Visualization & Analytics -->
+            <div class="skills-card">
+                <i class="fa-solid fa-chart-line"></i>
+                <h3>Data Visualization & Analytics</h3>
+                <p>Tableau, Power BI, EDA, Data Cleaning, Validation, Trend Analysis</p>
+            </div>
+
+            <!-- 8. Deployment & MLOps -->
+            <div class="skills-card">
+                <i class="fa-solid fa-cloud"></i>
+                <h3>Deployment & MLOps</h3>
+                <p>Docker, FastAPI, REST APIs, Git, Streamlit, Gradio, Jupyter</p>
+            </div>
+
+            <!-- 9. Business Analysis & Reporting -->
+            <div class="skills-card">
+                <i class="fa-solid fa-briefcase"></i>
+                <h3>Business Analysis & Reporting</h3>
+                <p>Excel, PowerPoint, Word, Documentation, Stakeholder Communication</p>
+            </div>
         </div>
+    </section>
 
-        <!-- 2. Machine Learning -->
-        <div class="skills-card">
-            <i class="fa-solid fa-brain"></i>
-            <h3>Machine Learning</h3>
-            <p>Regression, Classification, Tree-Based Models, Naive Bayes, Feature Engineering, Model Evaluation</p>
-        </div>
-
-        <!-- 3. Deep Learning -->
-        <div class="skills-card">
-            <i class="fa-solid fa-network-wired"></i>
-            <h3>Deep Learning</h3>
-            <p>CNNs, Neural Networks, Transfer Learning, Model Training & Optimization</p>
-        </div>
-
-        <!-- 4. Natural Language Processing -->
-        <div class="skills-card">
-            <i class="fa-solid fa-language"></i>
-            <h3>Natural Language Processing</h3>
-            <p>Hugging Face, ClinicalBERT, Tokenization, Text Preprocessing, Embeddings</p>
-        </div>
-
-        <!-- 5. Generative AI & LLMs -->
-        <div class="skills-card">
-            <i class="fa-solid fa-robot"></i>
-            <h3>Generative AI & LLMs</h3>
-            <p>Prompt Engineering, LLMs, RAG, Vector Databases (ChromaDB), LlamaIndex</p>
-        </div>
-
-        <!-- 6. Data Engineering & Big Data -->
-        <div class="skills-card">
-            <i class="fa-solid fa-database"></i>
-            <h3>Data Engineering & Big Data</h3>
-            <p>ETL/ELT Pipelines, Data Warehousing, Data Modeling, Apache Spark</p>
-        </div>
-
-        <!-- 7. Data Visualization & Analytics -->
-        <div class="skills-card">
-            <i class="fa-solid fa-chart-line"></i>
-            <h3>Data Visualization & Analytics</h3>
-            <p>Tableau, Power BI, EDA, Data Cleaning, Validation, Trend Analysis</p>
-        </div>
-
-        <!-- 8. Deployment & MLOps -->
-        <div class="skills-card">
-            <i class="fa-solid fa-cloud"></i>
-            <h3>Deployment & MLOps</h3>
-            <p>Docker, FastAPI, REST APIs, Git, Streamlit, Gradio, Jupyter</p>
-        </div>
-
-        <!-- 9. Business Analysis & Reporting -->
-        <div class="skills-card">
-            <i class="fa-solid fa-briefcase"></i>
-            <h3>Business Analysis & Reporting</h3>
-            <p>Excel, PowerPoint, Word, Documentation, Stakeholder Communication</p>
-        </div>
-
-    </div>
-</section>
-
-
-
-    <!-- Experience Section-->
+    <!-- Experience Section -->
     <section id="experience" class="section-bg">
         <h2 class="section-title"><span>Experience</span></h2>
-    
+
         <div class="experience-timeline">
-    
             <!-- Experience 1 -->
             <div class="experience-item">
                 <div class="timeline-dot"></div>
@@ -198,192 +202,304 @@
                 <div class="experience-row">
                     <!-- LEFT: EXPERIENCE CARD -->
                     <div class="experience-card">
-                    <h3>IETE Internship</h3>
-                    <span class="experience-org">
-                        IETE Internship, Tirupati, AP, India
-                    </span>
-                    <span class="experience-time">Jun 2022 – Aug 2022</span>
-    
-                    <p>
-                        Completed an AI internship using Python, gaining hands-on experience
-                        in data collection, cleaning, feature selection, and analysis.
-                    </p>
-    
-                    <ul>
-                        <li>Built a spam email detection system using Naive Bayes</li>
-                        <li>Applied NLP techniques like CountVectorizer & MultinomialNB</li>
-                        <li>Worked with probabilistic modeling and text processing</li>
-                    </ul>
+                        <h3>IETE Internship</h3>
+                        <span class="experience-org">
+                            IETE Internship, Tirupati, AP, India
+                        </span>
+                        <span class="experience-time">Jun 2022 – Aug 2022</span>
+
+                        <p>
+                            Completed an AI internship using Python, gaining hands-on experience
+                            in data collection, cleaning, feature selection, and analysis.
+                        </p>
+
+                        <ul>
+                            <li>Built a spam email detection system using Naive Bayes</li>
+                            <li>Applied NLP techniques like CountVectorizer & MultinomialNB</li>
+                            <li>Worked with probabilistic modeling and text processing</li>
+                        </ul>
+                    </div>
+
+                    <!-- RIGHT: IMAGE -->
+                    <div class="experience-image">
+                        <img src="Used-Images/internship.jpeg" alt="IETE Internship">
+                    </div>
                 </div>
-                <!-- RIGHT: IMAGE -->
-        <div class="experience-image">
-            <img src="Used-Images/internship.jpeg" alt="IETE Internship">
-        </div>
-    </div>
-</div>
+            </div>
+
             <!-- Experience 2 -->
             <div class="experience-item">
                 <div class="timeline-dot"></div>
-    
+
                 <div class="experience-row">
                     <!-- LEFT: EXPERIENCE CARD -->
-                <div class="experience-card">
-                    <h3>Math Coach</h3>
-                    <span class="experience-org">
-                        University of Maryland, Baltimore County, MD
-                    </span>
-                    <span class="experience-time">Sept 2024 – Dec 2025</span>
-    
-                    <p>
-                        Designed personalized academic support plans using student data
-                        to improve learning outcomes.
-                    </p>
-    
-                    <ul>
-                        <li>Identified learning gaps and improved test scores</li>
-                        <li>Collaborated with teachers to track student progress</li>
-                        <li>Boosted overall class performance and engagement</li>
-                    </ul>
+                    <div class="experience-card">
+                        <h3>Math Coach</h3>
+                        <span class="experience-org">
+                            University of Maryland, Baltimore County, MD
+                        </span>
+                        <span class="experience-time">Sept 2024 – Dec 2025</span>
+
+                        <p>
+                            Designed personalized academic support plans using student data
+                            to improve learning outcomes.
+                        </p>
+
+                        <ul>
+                            <li>Identified learning gaps and improved test scores</li>
+                            <li>Collaborated with teachers to track student progress</li>
+                            <li>Boosted overall class performance and engagement</li>
+                        </ul>
+                    </div>
+
+                    <!-- RIGHT: IMAGE -->
+                    <div class="experience-image">
+                        <img src="Used-Images/mathcoach.jpeg" alt="IETE Internship">
+                    </div>
                 </div>
-                <!-- RIGHT: IMAGE -->
-        <div class="experience-image">
-            <img src="Used-Images/mathcoach.jpeg" alt="IETE Internship">
-        </div>
-    </div>
-</div>
+            </div>
+
             <!-- Experience 3 -->
             <div class="experience-item">
                 <div class="timeline-dot"></div>
 
                 <div class="experience-row">
                     <!-- LEFT: EXPERIENCE CARD -->
-                <div class="experience-card">
-                    <h3>Food Service Worker</h3>
-                    <span class="experience-org">Compass Group (Chartwells Higher Education)</span>
-                    <span class="experience-time">Aug 2024 – Dec 2025</span>
+                    <div class="experience-card">
+                        <h3>Food Service Worker</h3>
+                        <span class="experience-org">Compass Group (Chartwells Higher Education)</span>
+                        <span class="experience-time">Aug 2024 – Dec 2025</span>
 
-                    <p>
-                        Worked as a Barista at Starbucks operated under Chartwells Higher Education,
-                        a member of the Compass Group. Developed strong customer service, teamwork,
-                        and time management skills in a fast-paced environment.
-                    </p>
+                        <p>
+                            Worked as a Barista at Starbucks operated under Chartwells Higher Education,
+                            a member of the Compass Group. Developed strong customer service, teamwork,
+                            and time management skills in a fast-paced environment.
+                        </p>
 
-                    <ul>
-                        <li>Delivered consistent customer service during peak hours</li>
-                        <li>Collaborated with team members to ensure smooth daily operations</li>
-                        <li>Improved efficiency and multitasking in high-pressure situations</li>
-                    </ul>
+                        <ul>
+                            <li>Delivered consistent customer service during peak hours</li>
+                            <li>Collaborated with team members to ensure smooth daily operations</li>
+                            <li>Improved efficiency and multitasking in high-pressure situations</li>
+                        </ul>
+                    </div>
+
+                    <!-- RIGHT: IMAGE -->
+                    <div class="experience-image">
+                        <img src="Used-Images/starbucks.jpeg" alt="IETE Internship">
+                    </div>
                 </div>
-            <!-- RIGHT: IMAGE -->
-        <div class="experience-image">
-            <img src="Used-Images/starbucks.jpeg" alt="IETE Internship">
+            </div>
         </div>
-    </div>
-</div>
     </section>
-
 
     <!-- Projects -->
     <section id="projects" class="section-bg">
         <h2 class="section-title"><span>Projects</span></h2>
-    
+
         <div class="project-grid">
-    
             <div class="project-card">
                 <img src="Used-Images/healthcare.jpeg" alt="Project 1">
                 <h3>Patient Mortality & Readmission (MIMIC-III)</h3>
                 <p>Healthcare analytics using clinical data to predict mortality and readmission.</p>
-    
-                <a href="https://github.com/Krishnateja26/Analysis-of-Patient-Mortality-and-Readmission-using-MIMIC-iii-Dataset"
-                   target="_blank"
-                   class="github-btn">
+
+                <a
+                    href="https://github.com/Krishnateja26/Analysis-of-Patient-Mortality-and-Readmission-using-MIMIC-iii-Dataset"
+                    target="_blank"
+                    class="github-btn"
+                >
                     <i class="fa-brands fa-github"></i> View on GitHub
                 </a>
             </div>
-    
+
             <div class="project-card">
                 <img src="Used-Images/covid.jpeg" alt="Project 2">
                 <h3>COVID-19 Severity & Vaccination Analysis</h3>
                 <p>Statistical and ML analysis of COVID-19 outcomes in the US.</p>
-    
-                <a href="https://github.com/Krishnateja26/Analyzing-Factors-Influencing-COVID-19-Severity-and-Vaccination-Uptake-In-United-States-"
-                   target="_blank"
-                   class="github-btn">
+
+                <a
+                    href="https://github.com/Krishnateja26/Analyzing-Factors-Influencing-COVID-19-Severity-and-Vaccination-Uptake-In-United-States-"
+                    target="_blank"
+                    class="github-btn"
+                >
                     <i class="fa-brands fa-github"></i> View on GitHub
                 </a>
             </div>
-    
+
             <div class="project-card">
                 <img src="Used-Images/xray.jpeg" alt="Project 3">
                 <h3>COVID-19 Severity from X-Ray Images</h3>
                 <p>Deep learning model for severity prediction using medical imaging.</p>
-    
-                <a href="https://github.com/Krishnateja26/Prediction-of-COVID-19-Severity-from-X-Ray-Images-using-Deep-Learning-Approach"
-                   target="_blank"
-                   class="github-btn">
+
+                <a
+                    href="https://github.com/Krishnateja26/Prediction-of-COVID-19-Severity-from-X-Ray-Images-using-Deep-Learning-Approach"
+                    target="_blank"
+                    class="github-btn"
+                >
                     <i class="fa-brands fa-github"></i> View on GitHub
                 </a>
             </div>
-    
+
             <div class="project-card">
                 <img src="Used-Images/obesity.jpeg" alt="Project 4">
                 <h3>Obesity Classification using ML</h3>
                 <p>Classification and feature analysis for obesity risk prediction.</p>
-    
-                <a href="https://github.com/Krishnateja26/Obesity-Classification-and-Data-Analysis-using-Machine-Learning"
-                   target="_blank"
-                   class="github-btn">
+
+                <a
+                    href="https://github.com/Krishnateja26/Obesity-Classification-and-Data-Analysis-using-Machine-Learning"
+                    target="_blank"
+                    class="github-btn"
+                >
                     <i class="fa-brands fa-github"></i> View on GitHub
                 </a>
             </div>
-    
         </div>
     </section>
-    
-
 
     <!-- Contact -->
-    <section id="contact" class="section-bg">
-        <div class="contact-section">
-        <h2 class="section-title"><span>Contact Me</span></h2>
+    <section id="contact" class="section-bg contact-section-v2">
+        <div class="contact-shell">
+            <h2 class="section-title"><span>Contact Me</span></h2>
     
-        <div class="contact-grid">
+            <div class="contact-v2-grid">
+                <div class="contact-v2-info">
+                    <h3>Get In Touch</h3>
+                    <p>
+                        I’m open to data, AI, analytics, and machine learning opportunities.
+                        Feel free to connect with me for collaborations, projects, or professional discussions.
+                    </p>
     
-            <!-- Location -->
-            <div class="contact-card">
-                <i class="fas fa-location-dot"></i>
-                <h3>Location</h3>
-                <p>California, United States</p>
-            </div>
+                    <div class="contact-v2-list">
+                        <div class="contact-v2-item static-item">
+                            <i class="fas fa-location-dot"></i>
+                            <div>
+                                <h4>Location</h4>
+                                <p>California, United States</p>
+                            </div>
+                        </div>
     
-            <!-- GitHub -->
-            <a href="https://github.com/Krishnateja26?tab=repositories" target="_blank" class="contact-card">
-                <i class="fab fa-github"></i>
-                <h3>GitHub</h3>
-                <p>View my projects & code</p>
-            </a>
+                        <a href="mailto:ksuram1@umbc.edu" class="contact-v2-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>ksuram1@umbc.edu</p>
+                            </div>
+                        </a>
     
-            <!-- LinkedIn -->
-            <a href="https://www.linkedin.com/in/krishna-teja-reddy-s-93b210231/" target="_blank" class="contact-card">
-                <i class="fab fa-linkedin"></i>
-                <h3>LinkedIn</h3>
-                <p>Connect professionally</p>
-            </a>
+                        <a href="https://github.com/Krishnateja26?tab=repositories" target="_blank" rel="noopener noreferrer" class="contact-v2-item">
+                            <i class="fab fa-github"></i>
+                            <div>
+                                <h4>GitHub</h4>
+                                <p>View my projects & code</p>
+                            </div>
+                        </a>
+    
+                        <a href="https://www.linkedin.com/in/krishna-teja-reddy-s-93b210231/" target="_blank" rel="noopener noreferrer" class="contact-v2-item">
+                            <i class="fab fa-linkedin"></i>
+                            <div>
+                                <h4>LinkedIn</h4>
+                                <p>Connect professionally</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+    
+                <div class="contact-v2-form-box">
+                    <h3>Send Me a Message</h3>
+                    <form id="contact-form" class="contact-v2-form">
+                        <div class="contact-v2-row">
+                            <input type="text" name="name" placeholder="Your Name" required>
+                            <input type="email" name="email" placeholder="Your Email" required>
+                        </div>
+    
+                        <input type="text" name="title" placeholder="Subject" required>
+                        <input type="hidden" name="time" id="contact-time">
+                        <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+    
+                        <button type="submit" class="contact-v2-submit">
+                            Send Message <i class="fa-regular fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
-    
+
     <!-- Footer -->
     <footer>
         <p>&copy; 2026 Krishna Teja Portfolio . All rights reserved.</p>
-        <!-- <div class="social-links">
+
+        <!--
+        <div class="social-links">
             <a href="#"><i class="fa-brands fa-github"></i></a>
             <a href="#"><i class="fa-brands fa-linkedin"></i></a>
             <a href="#"><i class="fa-brands fa-facebook"></i></a>
             <a href="#"><i class="fa-brands fa-twitter"></i></a>
-        </div> -->
+        </div>
+        -->
     </footer>
+
+    <!-- Chatbot -->
+    <div id="kt-chatbot" class="kt-chatbot">
+        <div class="kt-chatbot-launch-wrap">
+            <div class="kt-chatbot-hint">
+                Hello, welcome to the portfolio.<br>
+                If you'd like to know more about KT, click on me.<br>
+            </div>
+    
+            <button id="ktChatToggle" class="kt-chatbot-toggle" aria-label="Open chatbot">
+                <span class="kt-wave">👋</span>
+                <i class="fa-solid fa-comments"></i>
+            </button>
+        </div>
+    
+        <div id="ktChatPanel" class="kt-chatbot-panel">
+            <div class="kt-chatbot-header">
+                <div class="kt-chatbot-title-wrap">
+                    <div class="kt-chatbot-avatar">
+                        <img src="Used-Images/Krishna Teja Profile.png" alt="Krishna Teja chatbot avatar">
+                    </div>
+    
+                    <div>
+                        <h3>Chat with KrishnaBot</h3>
+                        <p>Ask me about Krishna Teja</p>
+                    </div>
+                </div>
+    
+                <button id="ktChatClose" class="kt-chatbot-close" aria-label="Close chatbot">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+    
+            <div id="ktChatMessages" class="kt-chatbot-messages">
+                <div class="kt-msg kt-bot-msg">
+                    Hi, I'm Krishna Teja’s chatbot. You can ask me any questions related to his background,
+                    projects, skills, or experience.
+                </div>
+            </div>
+    
+            <form id="ktChatForm" class="kt-chatbot-inputbar">
+                <input
+                    id="ktChatInput"
+                    type="text"
+                    placeholder="Ask about Krishna Teja..."
+                    autocomplete="off"
+                >
+                <button id="ktChatSend" type="submit" class="kt-chat-send" aria-label="Send message">
+                    <i class="fa-regular fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
     <!-- link to javascript file -->
     <script src="Script.js"></script>
+    <script src="Contact.js"></script>
+    <script src="chatbot.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+      emailjs.init("NZj5oeETdZ6WJ1z1k");
+    </script>
+    
 </body>
 </html>

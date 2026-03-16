@@ -1,0 +1,421 @@
+{
+  "profile": {
+    "full_name": "Krishna Teja Reddy Suram",
+    "preferred_name": "Krishna Teja",
+    "bot_name": "KrishnaBot",
+    "location": "California, United States",
+    "email": "ksuram1@umbc.edu",
+    "linkedin": "https://www.linkedin.com/in/krishna-teja-reddy-s-93b210231/",
+    "github": "https://github.com/Krishnateja26?tab=repositories",
+    "summary": "Krishna Teja Reddy Suram is a Data Science graduate with experience in data analytics, machine learning, SQL, Python, retrieval-augmented generation systems, healthcare AI, dashboards, ETL workflows, and applied AI product development.",
+    "current_status": "He completed his Master's in Data Science at the University of Maryland, Baltimore County (UMBC) in December 2025 and is targeting Data Analyst, Data Scientist, ML Engineer, and AI Engineer roles.",
+    "target_roles": [
+      "Data Analyst",
+      "Data Scientist",
+      "Machine Learning Engineer",
+      "AI Engineer"
+    ],
+    "availability": "Open to data, AI, analytics, and machine learning opportunities, collaborations, projects, and professional discussions."
+  },
+  "education": [
+    {
+      "degree": "Master of Science in Data Science",
+      "institution": "University of Maryland, Baltimore County (UMBC)",
+      "completion_date": "December 2025",
+      "notes": [
+        "Built a strong foundation in data analysis, machine learning, data visualization, statistics, SQL, ETL concepts, and large language model applications.",
+        "Completed coursework and projects involving data management, predictive modeling, analytics, and applied AI systems."
+      ]
+    },
+    {
+      "degree": "Bachelor's in Electronics and Communication Engineering",
+      "institution": "Sri Venkateswara University College of Engineering",
+      "completion_date": "",
+      "notes": [
+        "Undergraduate background in engineering, systems thinking, and technical problem solving."
+      ]
+    }
+  ],
+  "skills": {
+    "programming_languages": [
+      "Python",
+      "SQL",
+      "JavaScript",
+      "HTML",
+      "CSS"
+    ],
+    "data_and_analytics": [
+      "Data Analysis",
+      "Exploratory Data Analysis (EDA)",
+      "Data Cleaning",
+      "Data Preprocessing",
+      "Feature Engineering",
+      "Data Visualization",
+      "Dashboarding",
+      "Reporting",
+      "ETL concepts",
+      "Relational Data Analysis",
+      "Excel",
+      "Google Sheets"
+    ],
+    "machine_learning": [
+      "Classification",
+      "Regression",
+      "Decision Trees",
+      "Support Vector Machines (SVM)",
+      "Convolutional Neural Networks (CNN)",
+      "Hyperparameter Tuning",
+      "Model Evaluation",
+      "Confusion Matrix",
+      "ROC Curve Analysis",
+      "Cross Validation",
+      "SHAP Analysis"
+    ],
+    "llm_and_rag": [
+      "Retrieval-Augmented Generation (RAG)",
+      "LlamaIndex",
+      "ChromaDB",
+      "Prompting for AI applications",
+      "Knowledge-grounded chatbot design",
+      "Safety filtering",
+      "Evaluation workflow design"
+    ],
+    "tools_and_frameworks": [
+      "Flask",
+      "FastAPI",
+      "Streamlit",
+      "Tableau",
+      "Power BI",
+      "SSMS",
+      "SQL Server Integration Services (SSIS)"
+    ],
+    "soft_skills": [
+      "Communication",
+      "Leadership",
+      "Tutoring and mentoring",
+      "Organization",
+      "Time management",
+      "Team collaboration"
+    ]
+  },
+  "experience": [
+    {
+      "type": "Academic and project-based experience",
+      "summary": "Worked on applied data science, analytics, ETL, machine learning, and AI projects across healthcare, NLP, computer vision, and business analysis.",
+      "details": [
+        "Built end-to-end project workflows involving data extraction, preprocessing, analysis, modeling, evaluation, and deployment.",
+        "Used SQL, Excel, Python, and dashboarding tools for structured data analysis and reporting.",
+        "Worked on ETL-related concepts and data management through coursework and projects."
+      ]
+    },
+    {
+      "type": "Leadership and student involvement",
+      "summary": "Held multiple leadership and mentoring roles during undergraduate studies.",
+      "details": [
+        "Served as General Secretary for the Department of Electronics and Communication Engineering.",
+        "Served as Student Placement Coordinator.",
+        "Taught M1 classes to first-year undergraduates.",
+        "Served as Class Representative.",
+        "Participated in the Programming Club and Photography Club."
+      ]
+    },
+    {
+      "type": "Tutoring and academic support interest",
+      "summary": "Has a strong background in tutoring, mentoring, and student support.",
+      "details": [
+        "Interested in tutoring and academic support roles.",
+        "Comfortable helping others learn technical and academic concepts."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Healthcare Analytics Pipeline using MIMIC-III",
+      "category": "Healthcare AI / Predictive Modeling",
+      "summary": "Built a healthcare analytics pipeline to predict in-hospital mortality and 30-day readmission using MIMIC-III data with structured and unstructured features, followed by deployment in Streamlit.",
+      "highlights": [
+        "Worked with clinical data and machine learning pipelines.",
+        "Combined structured and unstructured healthcare information.",
+        "Focused on predictive modeling for patient outcomes.",
+        "Deployed the solution using Streamlit."
+      ],
+      "keywords": [
+        "healthcare",
+        "MIMIC-III",
+        "mortality prediction",
+        "readmission",
+        "Streamlit",
+        "predictive modeling"
+      ]
+    },
+    {
+      "name": "Reddit FAQ Chatbot",
+      "category": "RAG / NLP / LLM Application",
+      "summary": "Built a domain-specific Reddit FAQ chatbot using retrieval-augmented generation with LlamaIndex, ChromaDB, Gemini, safety filtering, and evaluation components.",
+      "highlights": [
+        "Designed a knowledge-grounded chatbot architecture.",
+        "Used retrieval and vector-based storage concepts.",
+        "Included safety filtering and evaluation logic.",
+        "Focused on domain-specific question answering."
+      ],
+      "keywords": [
+        "RAG",
+        "chatbot",
+        "Reddit",
+        "LlamaIndex",
+        "ChromaDB",
+        "Gemini",
+        "LLM",
+        "NLP"
+      ]
+    },
+    {
+      "name": "COVID-19 Chest X-ray CNN Model",
+      "category": "Computer Vision / Deep Learning",
+      "summary": "Built an AlexNet-inspired convolutional neural network for COVID-19 chest X-ray classification and deployed it through a Flask-based application for real-time inference.",
+      "highlights": [
+        "Worked on image-based medical classification.",
+        "Used CNN architecture inspired by AlexNet.",
+        "Built a Flask deployment for inference."
+      ],
+      "keywords": [
+        "CNN",
+        "computer vision",
+        "COVID-19",
+        "chest X-ray",
+        "Flask",
+        "deep learning"
+      ]
+    },
+    {
+      "name": "Bangalore Home Price Regression",
+      "category": "Regression / Data Science",
+      "summary": "Built a regression pipeline to predict Bangalore home prices using Kaggle data, including data cleaning, feature engineering, location dimensionality reduction, and domain-based outlier removal.",
+      "highlights": [
+        "Worked on regression modeling and feature engineering.",
+        "Computed price per square foot and engineered useful features.",
+        "Reduced dimensionality on location data.",
+        "Removed outliers using domain logic."
+      ],
+      "keywords": [
+        "regression",
+        "real estate",
+        "Bangalore",
+        "feature engineering",
+        "outlier removal"
+      ]
+    },
+    {
+      "name": "Healthcare Prediction using Decision Tree and SVM",
+      "category": "Machine Learning / Model Comparison",
+      "summary": "Worked on healthcare prediction using Decision Tree and SVM models with confusion matrix analysis, ROC plotting, hyperparameter tuning, and SHAP-based interpretation.",
+      "highlights": [
+        "Compared traditional machine learning models.",
+        "Evaluated models using classification metrics and ROC analysis.",
+        "Performed hyperparameter tuning and interpretability analysis."
+      ],
+      "keywords": [
+        "Decision Tree",
+        "SVM",
+        "healthcare",
+        "ROC",
+        "SHAP",
+        "hyperparameter tuning"
+      ]
+    },
+    {
+      "name": "Statistics and Data Analysis Work",
+      "category": "Statistics / Analytical Methods",
+      "summary": "Worked on statistics and data analysis assignments involving hypothesis testing, ANOVA, regression, confidence intervals, and chi-square tests.",
+      "highlights": [
+        "Applied core statistical methods.",
+        "Connected analytics to inference and decision-making."
+      ],
+      "keywords": [
+        "statistics",
+        "ANOVA",
+        "hypothesis testing",
+        "regression",
+        "confidence intervals",
+        "chi-square"
+      ]
+    }
+  ],
+  "notable_interests": [
+    "Data analytics",
+    "Machine learning",
+    "AI engineering",
+    "Healthcare AI",
+    "RAG systems",
+    "Business intelligence",
+    "Dashboarding",
+    "Applied problem solving"
+  ],
+  "career_targets": {
+    "roles": [
+      "Data Analyst",
+      "Data Scientist",
+      "ML Engineer",
+      "AI Engineer"
+    ],
+    "industries_of_interest": [
+      "Healthcare",
+      "AI products",
+      "Analytics",
+      "Technology"
+    ],
+    "work_themes": [
+      "Turning raw data into insights",
+      "Building intelligent systems",
+      "Developing decision-support tools",
+      "Creating data-driven products"
+    ]
+  },
+  "faq": [
+    {
+      "question_patterns": [
+        "who is krishna teja",
+        "tell me about krishna",
+        "introduce krishna teja",
+        "who are you"
+      ],
+      "answer": "Krishna Teja Reddy Suram is a Data Science graduate from UMBC with experience in data analytics, machine learning, SQL, Python, RAG systems, and applied AI projects across healthcare, NLP, and computer vision."
+    },
+    {
+      "question_patterns": [
+        "what is his education",
+        "where did he study",
+        "what did krishna study",
+        "education background"
+      ],
+      "answer": "Krishna completed his Master's in Data Science at the University of Maryland, Baltimore County in December 2025. He also holds an undergraduate degree in Electronics and Communication Engineering from Sri Venkateswara University College of Engineering."
+    },
+    {
+      "question_patterns": [
+        "what skills does he have",
+        "technical skills",
+        "does he know sql",
+        "does he know python",
+        "skills"
+      ],
+      "answer": "His skills include Python, SQL, JavaScript, HTML, CSS, machine learning, data analysis, data visualization, Excel, Tableau, Power BI, Flask, FastAPI, Streamlit, RAG systems, LlamaIndex, and ChromaDB."
+    },
+    {
+      "question_patterns": [
+        "what projects has he worked on",
+        "projects",
+        "tell me about his projects",
+        "portfolio projects"
+      ],
+      "answer": "Krishna has worked on projects including a MIMIC-III healthcare analytics pipeline for mortality and readmission prediction, a Reddit FAQ chatbot using RAG with LlamaIndex and ChromaDB, a COVID-19 chest X-ray CNN deployed with Flask, a Bangalore home price regression project, and analytics work involving SQL, manufacturing data, and model evaluation."
+    },
+    {
+      "question_patterns": [
+        "what kind of roles is he looking for",
+        "target roles",
+        "what jobs is he interested in",
+        "career goals"
+      ],
+      "answer": "He is targeting Data Analyst, Data Scientist, ML Engineer, and AI Engineer roles."
+    },
+    {
+      "question_patterns": [
+        "how can i contact him",
+        "contact",
+        "how to reach krishna",
+        "email linkedin github"
+      ],
+      "answer": "You can contact Krishna through the portfolio contact form, email at ksuram1@umbc.edu, LinkedIn, or GitHub."
+    },
+    {
+      "question_patterns": [
+        "has he worked on rag",
+        "rag experience",
+        "chatbot experience",
+        "llm projects"
+      ],
+      "answer": "Yes. Krishna has built a Reddit FAQ chatbot using retrieval-augmented generation with LlamaIndex, ChromaDB, Gemini, safety filtering, and evaluation logic."
+    },
+    {
+      "question_patterns": [
+        "has he worked with healthcare data",
+        "healthcare projects",
+        "medical ai experience"
+      ],
+      "answer": "Yes. He has worked on healthcare-focused projects including a MIMIC-III mortality and readmission prediction pipeline and a COVID-19 chest X-ray CNN model."
+    }
+  ],
+  "search_aliases": {
+    "sql": [
+      "sql",
+      "database",
+      "databases",
+      "queries",
+      "querying",
+      "rdbms"
+    ],
+    "python": [
+      "python",
+      "pandas",
+      "numpy",
+      "scikit-learn"
+    ],
+    "ml": [
+      "machine learning",
+      "ml",
+      "models",
+      "classification",
+      "regression"
+    ],
+    "rag": [
+      "rag",
+      "retrieval augmented generation",
+      "chatbot",
+      "llm",
+      "llms",
+      "vector database"
+    ],
+    "dashboard": [
+      "dashboard",
+      "dashboards",
+      "tableau",
+      "power bi",
+      "visualization",
+      "reporting"
+    ],
+    "education": [
+      "education",
+      "study",
+      "degree",
+      "masters",
+      "master's",
+      "umbc"
+    ],
+    "contact": [
+      "contact",
+      "email",
+      "linkedin",
+      "github",
+      "reach",
+      "connect"
+    ],
+    "healthcare": [
+      "healthcare",
+      "medical",
+      "clinical",
+      "mimic",
+      "xray",
+      "covid"
+    ]
+  },
+  "chatbot_guidance": {
+    "tone": "professional, concise, helpful, and confident",
+    "fallback_message": "I may not have that exact detail yet, but I can help with Krishna Teja's background, education, skills, projects, experience, and contact information.",
+    "response_rules": [
+      "Answer only using the information available in this knowledge file.",
+      "Do not invent employers, dates, or achievements that are not present.",
+      "When asked about projects, mention the most relevant project first.",
+      "When asked about contact, prefer the contact form, email, LinkedIn, and GitHub."
+    ]
+  }
+}
