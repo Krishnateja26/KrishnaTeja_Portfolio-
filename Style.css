@@ -1223,7 +1223,7 @@ footer p {
     right: -1.75rem;
     bottom: -1.75rem;
     left: -1.75rem;
-    background: rgba(0, 0, 0, 0.75);
+    background: rgba(0, 0, 0, 0.50);
     border-radius: 32px;
     z-index: -1;
     pointer-events: none;
