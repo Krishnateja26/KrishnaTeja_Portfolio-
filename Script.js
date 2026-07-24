@@ -7,6 +7,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const navLinks = document.querySelector(".nav-links");
     const glow = document.querySelector(".cursor-glow");
     const typingElement = document.getElementById("typing");
+    const matrixLoader = document.getElementById("matrixLoader");
+    const loaderPercent = document.getElementById("loaderPercent");
+    const loaderProgressBar = document.getElementById("loaderProgressBar");
+    const loaderLine = document.getElementById("loaderLine");
+    const loaderCommand = document.getElementById("loaderCommand");
+    const loaderDots = document.getElementById("loaderDots");
+    const enterPortfolio = document.getElementById("enterPortfolio");
 
     // Chatbot elements
     const ktChatbot = document.getElementById("kt-chatbot");
@@ -16,6 +23,106 @@ document.addEventListener("DOMContentLoaded", () => {
     const ktChatForm = document.getElementById("ktChatForm");
     const ktChatInput = document.getElementById("ktChatInput");
     const ktChatMessages = document.getElementById("ktChatMessages");
+
+
+    /* =========================
+       MATRIX ENTRY LOADER
+    ========================= */
+    if (matrixLoader) {
+        document.body.classList.add("loader-active");
+
+        const loaderSteps = [
+            { percent: 8, line: "Loading Krishna Teja's digital profile..." },
+            { percent: 19, line: "Opening matrix entry environment..." },
+            { percent: 31, line: "Indexing machine learning projects..." },
+            { percent: 44, line: "Scanning analytics and BI skill modules..." },
+            { percent: 58, line: "Connecting KrishnaBot knowledge layer..." },
+            { percent: 72, line: "Verifying AI, ML, SQL, and RAG systems..." },
+            { percent: 86, line: "Preparing portfolio interface..." },
+            { percent: 96, line: "Finalizing access controls..." },
+            { percent: 100, line: "Access granted. Entering portfolio..." }
+        ];
+
+        let loaderIndex = 0;
+        let loaderComplete = false;
+        let commandTyped = false;
+        let dotIndex = 1;
+
+        const dotsTimer = window.setInterval(() => {
+            if (!loaderDots || loaderComplete) return;
+
+            dotIndex = dotIndex === 3 ? 1 : dotIndex + 1;
+            loaderDots.textContent = ".".repeat(dotIndex);
+        }, 420);
+
+        function typeLoaderCommand() {
+            if (!loaderCommand || commandTyped) return;
+
+            commandTyped = true;
+            const command = "boot --profile krishna_teja";
+            let index = 0;
+
+            const commandTimer = window.setInterval(() => {
+                loaderCommand.textContent = command.slice(0, index);
+                index += 1;
+
+                if (index > command.length) {
+                    window.clearInterval(commandTimer);
+                }
+            }, 42);
+        }
+
+        function setLoaderProgress(step) {
+            const value = step.percent === 100
+                ? "100"
+                : String(step.percent).padStart(2, "0");
+            if (loaderPercent) loaderPercent.textContent = `${value}%`;
+            if (loaderProgressBar) loaderProgressBar.style.width = `${step.percent}%`;
+            if (loaderLine) loaderLine.textContent = step.line;
+
+            if (step.percent === 100 && enterPortfolio) {
+                if (loaderLine) loaderLine.textContent = "Access granted. Enter Portfolio is ready.";
+                enterPortfolio.disabled = false;
+                enterPortfolio.classList.add("is-ready");
+                matrixLoader.classList.add("is-complete");
+            }
+        }
+
+        function closeLoader() {
+            if (loaderComplete) return;
+
+            loaderComplete = true;
+            window.clearInterval(dotsTimer);
+            setLoaderProgress(loaderSteps[loaderSteps.length - 1]);
+            matrixLoader.classList.add("is-hidden");
+            document.body.classList.remove("loader-active");
+
+            window.setTimeout(() => {
+                matrixLoader.remove();
+            }, 850);
+        }
+
+        setLoaderProgress(loaderSteps[0]);
+        window.setTimeout(typeLoaderCommand, 450);
+
+        const loaderTimer = window.setInterval(() => {
+            loaderIndex += 1;
+
+            if (loaderIndex >= loaderSteps.length) {
+                window.clearInterval(loaderTimer);
+                return;
+            }
+
+            setLoaderProgress(loaderSteps[loaderIndex]);
+        }, 375);
+
+        if (enterPortfolio) {
+            enterPortfolio.addEventListener("click", () => {
+                window.clearInterval(loaderTimer);
+                closeLoader();
+            });
+        }
+    }
 
     /* =========================
        SMOOTH SCROLLING

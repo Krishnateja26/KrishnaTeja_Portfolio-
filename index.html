@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Krishna Teja | Data Science Portfolio</title>
 
     <link rel="stylesheet" href="Style.css">
 
@@ -20,6 +20,45 @@
 
 <body>
     <div class="cursor-glow"></div>
+
+    <div id="matrixLoader" class="matrix-loader" role="status" aria-live="polite">
+        <div class="loader-grid" aria-hidden="true"></div>
+
+        <div class="loader-console">
+            <div class="loader-topline">
+                <span class="loader-dot"></span>
+                <span>KT MATRIX INTERFACE</span>
+                <span>ENTRY SEQUENCE</span>
+            </div>
+
+            <div class="loader-brand">
+                <span class="loader-kicker">entering krishna teja's digital world</span>
+                <h1>WELCOME TO THE MATRIX</h1>
+                <p>Loading Krishna Teja's digital profile<span id="loaderDots">.</span></p>
+            </div>
+
+            <div class="loader-terminal">
+                <div class="terminal-controls" aria-hidden="true">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <p><span>ksuram@portfolio:~$</span> <span id="loaderCommand"></span></p>
+                <p id="loaderLine">Loading data science portfolio...</p>
+            </div>
+
+            <div class="loader-progress" aria-hidden="true">
+                <div class="loader-track">
+                    <span id="loaderProgressBar"></span>
+                </div>
+                <strong id="loaderPercent">00%</strong>
+            </div>
+
+            <button id="enterPortfolio" class="loader-enter" type="button" disabled>
+                Enter Portfolio
+            </button>
+        </div>
+    </div>
 
     <!-- Navigation -->
     <nav class="navbar">
@@ -47,18 +86,18 @@
     <!-- Hero Section -->
     <section id="home" class="hero center-hero">
         <div class="hero-content-center">
-            <h2 class="intro-hi">HELLO 👋</h2>
+            <h2 class="intro-hi">DATA SCIENCE PORTFOLIO</h2>
 
             <h1 class="intro-name-big">
-                <span class="im">I'm </span><span>KRISHNA TEJA</span>
+                <span class="im">I'm </span><span>Krishna Teja</span>
             </h1>
 
             <h3 class="typing-text">
                 I'm <span id="typing"></span>
             </h3>
 
-            <p class="sub-text">Data Science Graduate</p>
-            <p class="welcome-text">Welcome to my portfolio</p>
+            <p class="sub-text">Data Science Graduate | AI/ML Developer | Analytics Engineer</p>
+            <p class="welcome-text">Building intelligent systems with data, automation, and machine learning.</p>
 
             <a href="#contact" class="cta-button">Let’s Connect</a>
         </div>
@@ -200,29 +239,29 @@
                 <div class="timeline-dot"></div>
 
                 <div class="experience-row">
-                    <!-- LEFT: EXPERIENCE CARD -->
-                    <div class="experience-card">
-                        <h3>IETE Internship</h3>
-                        <span class="experience-org">
-                            IETE Internship, Tirupati, AP, India
-                        </span>
-                        <span class="experience-time">Jun 2022 – Aug 2022</span>
+                    <div class="experience-card featured-experience-title">
+                        <h3>Business Development and Data Analyst Intern</h3>
+                        <span class="experience-org">Temple Allen Industries, Rockville, MD</span>
+                        <span class="experience-time">Apr 2026 - Present</span>
 
                         <p>
-                            Completed an AI internship using Python, gaining hands-on experience
-                            in data collection, cleaning, feature selection, and analysis.
+                            Building internal automation and analytics workflows across procurement,
+                            hiring, reporting, and operational tracking.
                         </p>
 
                         <ul>
-                            <li>Built a spam email detection system using Naive Bayes</li>
-                            <li>Applied NLP techniques like CountVectorizer & MultinomialNB</li>
-                            <li>Worked with probabilistic modeling and text processing</li>
+                            <li>Built an internal procurement automation platform using React, Node.js/Express, Python, OpenAI API, MySQL/MariaDB, Excel automation, and PowerShell.</li>
+                            <li>Converted vendor quotes, emails, PDFs, and cart data into structured procurement records for review, POR generation, reporting, and receiving work order tracking.</li>
+                            <li>Designed SQL-backed workflows across vendor parts, quote intake, POR line items, receiving work orders, and activity logs to improve traceability and review accuracy.</li>
+                            <li>Cleaned, standardized, and validated 1,000+ procurement quote records from vendor emails and attachments using Python and Jupyter Notebook.</li>
+                            <li>Developed validation logic for duplicate manufacturer part numbers, missing fields, inconsistent quote rows, quantity price breaks, and review-needed records.</li>
+                            <li>Supported hiring automation with Python, Playwright, JavaScript/Node.js, Microsoft Graph API, OneDrive Excel APIs, Power Automate, Office Scripts, VBA, and scheduled scripts.</li>
+                            <li>Improved reliability of daily workflows through Windows Task Scheduler, NAS/QNAP cron planning, shell scripts, batch files, runtime wrappers, logs, duplicate handling, and troubleshooting.</li>
                         </ul>
                     </div>
 
-                    <!-- RIGHT: IMAGE -->
                     <div class="experience-image">
-                        <img src="Used-Images/internship.jpeg" alt="IETE Internship">
+                        <img src="Used-Images/1583064237901.jfif" alt="Temple Allen Industries logo">
                     </div>
                 </div>
             </div>
@@ -232,29 +271,26 @@
                 <div class="timeline-dot"></div>
 
                 <div class="experience-row">
-                    <!-- LEFT: EXPERIENCE CARD -->
-                    <div class="experience-card">
-                        <h3>Math Coach</h3>
-                        <span class="experience-org">
-                            University of Maryland, Baltimore County, MD
-                        </span>
-                        <span class="experience-time">Sept 2024 – Dec 2025</span>
+                    <div class="experience-card featured-experience-title">
+                        <h3>Data Analytics and AI Intern</h3>
+                        <span class="experience-org">WikiCharities, Remote</span>
+                        <span class="experience-time">Feb 2026 - Apr 2026</span>
 
                         <p>
-                            Designed personalized academic support plans using student data
-                            to improve learning outcomes.
+                            Analyzed digital performance data and built reporting workflows for campaign,
+                            outreach, website, and nonprofit visibility metrics.
                         </p>
 
                         <ul>
-                            <li>Identified learning gaps and improved test scores</li>
-                            <li>Collaborated with teachers to track student progress</li>
-                            <li>Boosted overall class performance and engagement</li>
+                            <li>Analyzed Instagram, Facebook, TikTok, YouTube, X/Twitter, Google Analytics, and Google Ads data to identify engagement trends and growth opportunities.</li>
+                            <li>Built automated KPI reporting workflows using Google Sheets and Apps Script to improve consistency, repeatability, and reporting accuracy.</li>
+                            <li>Developed dashboards and reports to monitor audience engagement, campaign effectiveness, outreach performance, nonprofit visibility, and data quality trends.</li>
+                            <li>Compared performance across paid, owned, and social channels to identify content patterns, engagement gaps, and campaign decision-making opportunities.</li>
                         </ul>
                     </div>
 
-                    <!-- RIGHT: IMAGE -->
                     <div class="experience-image">
-                        <img src="Used-Images/mathcoach.jpeg" alt="IETE Internship">
+                        <img src="Used-Images/6181fb5618fae-e7oSi1635908438.jpg" alt="WikiCharities logo">
                     </div>
                 </div>
             </div>
@@ -264,11 +300,66 @@
                 <div class="timeline-dot"></div>
 
                 <div class="experience-row">
-                    <!-- LEFT: EXPERIENCE CARD -->
+                    <div class="experience-card">
+                        <h3>IETE Internship</h3>
+                        <span class="experience-org">IETE Internship, Tirupati, AP, India</span>
+                        <span class="experience-time">Jun 2022 - Aug 2022</span>
+
+                        <p>
+                            Completed an AI internship using Python, gaining hands-on experience
+                            in data collection, cleaning, feature selection, and analysis.
+                        </p>
+
+                        <ul>
+                            <li>Built a spam email detection system using Naive Bayes.</li>
+                            <li>Applied NLP techniques like CountVectorizer and MultinomialNB.</li>
+                            <li>Worked with probabilistic modeling and text processing.</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-image">
+                        <img src="Used-Images/internship.jpeg" alt="IETE Internship">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Experience 4 -->
+            <div class="experience-item">
+                <div class="timeline-dot"></div>
+
+                <div class="experience-row">
+                    <div class="experience-card">
+                        <h3>Math Coach</h3>
+                        <span class="experience-org">University of Maryland, Baltimore County, MD</span>
+                        <span class="experience-time">Sept 2024 - Dec 2025</span>
+
+                        <p>
+                            Designed personalized academic support plans using student data
+                            to improve learning outcomes.
+                        </p>
+
+                        <ul>
+                            <li>Identified learning gaps and improved test scores.</li>
+                            <li>Collaborated with teachers to track student progress.</li>
+                            <li>Boosted overall class performance and engagement.</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-image">
+                        <img src="Used-Images/mathcoach.jpeg" alt="Math Coach at UMBC">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Experience 5 -->
+            <div class="experience-item">
+                <div class="timeline-dot"></div>
+
+                <div class="experience-row">
                     <div class="experience-card">
                         <h3>Food Service Worker</h3>
                         <span class="experience-org">Compass Group (Chartwells Higher Education)</span>
-                        <span class="experience-time">Aug 2024 – Dec 2025</span>
+                        <span class="experience-time">Aug 2024 - Dec 2025</span>
 
                         <p>
                             Worked as a Barista at Starbucks operated under Chartwells Higher Education,
@@ -277,15 +368,14 @@
                         </p>
 
                         <ul>
-                            <li>Delivered consistent customer service during peak hours</li>
-                            <li>Collaborated with team members to ensure smooth daily operations</li>
-                            <li>Improved efficiency and multitasking in high-pressure situations</li>
+                            <li>Delivered consistent customer service during peak hours.</li>
+                            <li>Collaborated with team members to ensure smooth daily operations.</li>
+                            <li>Improved efficiency and multitasking in high-pressure situations.</li>
                         </ul>
                     </div>
 
-                    <!-- RIGHT: IMAGE -->
                     <div class="experience-image">
-                        <img src="Used-Images/starbucks.jpeg" alt="IETE Internship">
+                        <img src="Used-Images/starbucks.jpeg" alt="Starbucks food service role">
                     </div>
                 </div>
             </div>
@@ -352,6 +442,20 @@
                     <i class="fa-brands fa-github"></i> View on GitHub
                 </a>
             </div>
+
+            <div class="project-card">
+                <img src="Used-Images/Blog-How-to-Personalize-Power-BI-in-Your-Customizable-Reporting-Environment.png" alt="Power BI Dashboards">
+                <h3>Power BI Dashboards</h3>
+                <p>Interactive business intelligence dashboards for reporting, insights, and data storytelling.</p>
+
+                <a
+                    href="https://github.com/Krishnateja26/Powet-BI-Dashboards"
+                    target="_blank"
+                    class="github-btn"
+                >
+                    <i class="fa-brands fa-github"></i> View on GitHub
+                </a>
+            </div>
         </div>
     </section>
 
@@ -373,15 +477,15 @@
                             <i class="fas fa-location-dot"></i>
                             <div>
                                 <h4>Location</h4>
-                                <p>California, United States</p>
+                                <p>United States</p>
                             </div>
                         </div>
     
-                        <a href="mailto:ksuram1@umbc.edu" class="contact-v2-item">
+                        <a href="mailto:ktjobs02@gmail.com" class="contact-v2-item">
                             <i class="fas fa-envelope"></i>
                             <div>
                                 <h4>Email</h4>
-                                <p>ksuram1@umbc.edu</p>
+                                <p>ktjobs02@gmail.com</p>
                             </div>
                         </a>
     
