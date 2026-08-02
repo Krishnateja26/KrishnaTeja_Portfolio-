@@ -1485,8 +1485,14 @@ footer p {
     background:
         linear-gradient(rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.16)),
         url("Used-Images/contact-bg.jpg") center/cover no-repeat;
-    background-attachment: fixed;
+    background-attachment: scroll;
     overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+    #contact.contact-section-v2 {
+        background-attachment: fixed;
+    }
 }
 
 #contact.contact-section-v2 .contact-shell {
@@ -3028,7 +3034,7 @@ body.loader-active {
         background:
             linear-gradient(180deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.34)),
             linear-gradient(90deg, rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.18)),
-            url("Used-Images/hero-matrix-data-bg.png") 36% 18% / auto 100svh no-repeat !important;
+            url("Used-Images/hero-matrix-data-bg.png") 36% 76px / auto 100svh no-repeat !important;
     }
 
     #home.hero::before {
@@ -3077,7 +3083,7 @@ body.loader-active {
 @media (max-width: 480px) {
     #home.hero,
     #home {
-        background-position: 34% 16% !important;
+        background-position: 34% 68px !important;
         background-size: auto 100svh !important;
     }
 
