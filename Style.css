@@ -1476,6 +1476,48 @@ footer p {
     background-attachment: scroll;
 }
 
+/* These source images are fairly low-resolution, so background-size: cover
+   upscales them noticeably on narrow/high-density mobile screens. A darker
+   overlay on mobile mutes that softness into an intentional-looking texture
+   instead of visible blur, without swapping the underlying images. */
+@media (max-width: 768px) {
+    #about {
+        background-image:
+            linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.7)),
+            url("Used-Images/about-bg.jpg");
+    }
+
+    #education {
+        background-image:
+            linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.7)),
+            url("Used-Images/education-bg.jpg");
+    }
+
+    #skills {
+        background-image:
+            linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.7)),
+            url("Used-Images/skills-bg.avif");
+    }
+
+    #experience {
+        background-image:
+            linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.7)),
+            url("Used-Images/experience-bg.jpg");
+    }
+
+    #projects {
+        background-image:
+            linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.7)),
+            url("Used-Images/projects-bg.jpg");
+    }
+
+    #contact.contact-section-v2 {
+        background-image:
+            linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.7)),
+            url("Used-Images/contact-bg.jpg");
+    }
+}
+
 /* =========================
    CONTACT SECTION
 ========================= */
