@@ -3,8 +3,8 @@
     "full_name": "Krishna Teja Reddy Suram",
     "preferred_name": "Krishna Teja",
     "bot_name": "KrishnaBot",
-    "location": "California, United States",
-    "email": "ksuram1@umbc.edu",
+    "location": "United States",
+    "email": "ktjobs02@gmail.com",
     "linkedin": "https://www.linkedin.com/in/krishna-teja-reddy-s-93b210231/",
     "github": "https://github.com/Krishnateja26?tab=repositories",
     "summary": "Krishna Teja Reddy Suram is a Data Science graduate with experience in data analytics, machine learning, SQL, Python, retrieval-augmented generation systems, healthcare AI, dashboards, ETL workflows, and applied AI product development.",
@@ -87,7 +87,11 @@
       "Tableau",
       "Power BI",
       "SSMS",
-      "SQL Server Integration Services (SSIS)"
+      "SQL Server Integration Services (SSIS)",
+      "MongoDB",
+      "Docker",
+      "QuickBooks Online API",
+      "Gemini API"
     ],
     "soft_skills": [
       "Communication",
@@ -99,6 +103,28 @@
     ]
   },
   "experience": [
+    {
+      "type": "Business Development and Data Analyst Intern",
+      "summary": "Interned at Temple Allen Industries (Rockville, MD) starting April 2026, building internal automation and analytics workflows across procurement, hiring, reporting, and operational tracking.",
+      "details": [
+        "Built an internal procurement automation platform using React, Node.js/Express, Python, the OpenAI API, MySQL/MariaDB, Excel automation, and PowerShell.",
+        "Converted vendor quotes, emails, PDFs, and cart data into structured procurement records for review, POR generation, reporting, and receiving work order tracking.",
+        "Designed SQL-backed workflows across vendor parts, quote intake, POR line items, receiving work orders, and activity logs to improve traceability and review accuracy.",
+        "Cleaned, standardized, and validated 1,000+ procurement quote records from vendor emails and attachments using Python and Jupyter Notebook.",
+        "Supported hiring automation with Python, Playwright, JavaScript/Node.js, Microsoft Graph API, OneDrive Excel APIs, Power Automate, Office Scripts, and VBA.",
+        "Improved reliability of daily workflows through Windows Task Scheduler, NAS/QNAP cron planning, shell scripts, and batch files."
+      ]
+    },
+    {
+      "type": "Data Analytics and AI Intern",
+      "summary": "Interned at WikiCharities (Remote) from February to April 2026, analyzing digital performance data and building reporting workflows for campaign, outreach, website, and nonprofit visibility metrics.",
+      "details": [
+        "Analyzed Instagram, Facebook, TikTok, YouTube, X/Twitter, Google Analytics, and Google Ads data to identify engagement trends and growth opportunities.",
+        "Built automated KPI reporting workflows using Google Sheets and Apps Script to improve consistency and reporting accuracy.",
+        "Developed dashboards and reports to monitor audience engagement, campaign effectiveness, and nonprofit visibility.",
+        "Compared performance across paid, owned, and social channels to identify content patterns and campaign decision-making opportunities."
+      ]
+    },
     {
       "type": "Academic and project-based experience",
       "summary": "Worked on applied data science, analytics, ETL, machine learning, and AI projects across healthcare, NLP, computer vision, and business analysis.",
@@ -130,6 +156,32 @@
   ],
   "projects": [
     {
+      "name": "Finz Accounting Data Pipeline",
+      "category": "Full-Stack Data Engineering / FinTech",
+      "summary": "Built a full accounting data platform for a take-home engineering challenge: raw bank transactions in, classified and reviewed cash-basis P&L out, synced to QuickBooks Online, and reconciled line-by-line against QuickBooks' own P&L to prove the numbers agree to the cent.",
+      "highlights": [
+        "FastAPI backend with MongoDB, a deterministic vendor/keyword classification rules engine, and a Gemini API fallback for anything the rules don't catch, constrained to a strict JSON schema.",
+        "Layered duplicate detection using a unique Mongo index on bank transaction ID plus a SHA-256 fingerprint fallback; verified against 5 planted duplicates in a 200-row test dataset with zero false merges.",
+        "Full QuickBooks Online OAuth integration with idempotent syncing (183 transactions posted, 0 failed against a live sandbox) and a reconciliation engine that diffs the app's P&L against QuickBooks' own report down to $0.01 tolerance.",
+        "Validated results matched the assignment's known-correct figures exactly across all 17 account-level P&L lines and a 3-month net profit of $68,180; 30 automated tests passing.",
+        "Containerized with Docker and deployed live on Render."
+      ],
+      "keywords": [
+        "FastAPI",
+        "MongoDB",
+        "QuickBooks API",
+        "Gemini API",
+        "Docker",
+        "accounting",
+        "fintech",
+        "reconciliation",
+        "data pipeline",
+        "pytest"
+      ],
+      "github": "https://github.com/Krishnateja26/Finz-Accounting-Pipeline-Challenge-07-27-2026",
+      "live_demo": "https://finz-accounting-pipeline-challenge-07-27.onrender.com/"
+    },
+    {
       "name": "Healthcare Analytics Pipeline using MIMIC-III",
       "category": "Healthcare AI / Predictive Modeling",
       "summary": "Built a healthcare analytics pipeline to predict in-hospital mortality and 30-day readmission using MIMIC-III data with structured and unstructured features, followed by deployment in Streamlit.",
@@ -146,7 +198,26 @@
         "readmission",
         "Streamlit",
         "predictive modeling"
-      ]
+      ],
+      "github": "https://github.com/Krishnateja26/Analysis-of-Patient-Mortality-and-Readmission-using-MIMIC-iii-Dataset"
+    },
+    {
+      "name": "COVID-19 Severity & Vaccination Analysis",
+      "category": "Statistics / Machine Learning",
+      "summary": "Statistical and machine learning analysis of factors influencing COVID-19 severity and vaccination uptake across the United States.",
+      "highlights": [
+        "Analyzed COVID-19 outcome data across US regions.",
+        "Applied statistical methods and machine learning models to identify severity and vaccination-uptake factors.",
+        "Produced data visualizations to communicate trends."
+      ],
+      "keywords": [
+        "COVID-19",
+        "statistics",
+        "machine learning",
+        "vaccination",
+        "data visualization"
+      ],
+      "github": "https://github.com/Krishnateja26/Analyzing-Factors-Influencing-COVID-19-Severity-and-Vaccination-Uptake-In-United-States-"
     },
     {
       "name": "Reddit FAQ Chatbot",
@@ -167,7 +238,8 @@
         "Gemini",
         "LLM",
         "NLP"
-      ]
+      ],
+      "github": "https://github.com/Krishnateja26/AI-Powered-Chatbot-with-LlamaIndex-ChromaDB"
     },
     {
       "name": "COVID-19 Chest X-ray CNN Model",
@@ -185,7 +257,44 @@
         "chest X-ray",
         "Flask",
         "deep learning"
-      ]
+      ],
+      "github": "https://github.com/Krishnateja26/Prediction-of-COVID-19-Severity-from-X-Ray-Images-using-Deep-Learning-Approach"
+    },
+    {
+      "name": "Obesity Classification using ML",
+      "category": "Machine Learning / Classification",
+      "summary": "Classification and feature analysis project predicting obesity risk levels from lifestyle and health indicators.",
+      "highlights": [
+        "Performed feature engineering on lifestyle and health indicator data.",
+        "Trained and evaluated classification models for obesity risk prediction.",
+        "Analyzed which features were most predictive of risk level."
+      ],
+      "keywords": [
+        "classification",
+        "obesity",
+        "feature engineering",
+        "machine learning",
+        "scikit-learn"
+      ],
+      "github": "https://github.com/Krishnateja26/Obesity-Classification-and-Data-Analysis-using-Machine-Learning"
+    },
+    {
+      "name": "Power BI Dashboards",
+      "category": "Business Intelligence / Data Visualization",
+      "summary": "A collection of interactive Power BI dashboards for business reporting, insights, and data storytelling.",
+      "highlights": [
+        "Built interactive dashboards for reporting and stakeholder communication.",
+        "Used DAX for calculated metrics and data modeling.",
+        "Focused on clear, actionable data storytelling."
+      ],
+      "keywords": [
+        "Power BI",
+        "DAX",
+        "business intelligence",
+        "dashboards",
+        "data visualization"
+      ],
+      "github": "https://github.com/Krishnateja26/Powet-BI-Dashboards"
     },
     {
       "name": "Bangalore Home Price Regression",
@@ -222,6 +331,26 @@
         "SHAP",
         "hyperparameter tuning"
       ]
+    },
+    {
+      "name": "Climate Change Data Analysis Using Big Data",
+      "category": "Big Data / Predictive Modeling",
+      "summary": "Analyzed 8.6 million U.S. weather events across 49 states (2006-2016) using PySpark on Databricks to identify trends and forecast extreme weather patterns.",
+      "highlights": [
+        "Processed a 1.1 GB dataset from 2,071 airport weather stations using distributed computing.",
+        "Built a Linear Regression model with an R^2 of 0.9897.",
+        "Built a Random Forest classifier with a 99.48% F1-score and a Logistic Regression model with 99.26% accuracy.",
+        "Performed temporal-spatial analysis to support disaster preparedness and climate resilience use cases."
+      ],
+      "keywords": [
+        "PySpark",
+        "Databricks",
+        "big data",
+        "climate",
+        "weather forecasting",
+        "predictive modeling"
+      ],
+      "github": "https://github.com/Krishnateja26/Climate-Change-Data-Analysis-Using-Big-Data"
     },
     {
       "name": "Statistics and Data Analysis Work",
@@ -307,7 +436,7 @@
         "tell me about his projects",
         "portfolio projects"
       ],
-      "answer": "Krishna has worked on projects including a MIMIC-III healthcare analytics pipeline for mortality and readmission prediction, a Reddit FAQ chatbot using RAG with LlamaIndex and ChromaDB, a COVID-19 chest X-ray CNN deployed with Flask, a Bangalore home price regression project, and analytics work involving SQL, manufacturing data, and model evaluation."
+      "answer": "Krishna has worked on projects including a full-stack accounting data pipeline with QuickBooks integration and Gemini-assisted classification (live demo available), a MIMIC-III healthcare analytics pipeline for mortality and readmission prediction, a Reddit FAQ chatbot using RAG with LlamaIndex and ChromaDB, a COVID-19 chest X-ray CNN deployed with Flask, a big data analysis of 8.6 million U.S. weather events using PySpark on Databricks, Power BI dashboards, and more."
     },
     {
       "question_patterns": [
@@ -325,7 +454,7 @@
         "how to reach krishna",
         "email linkedin github"
       ],
-      "answer": "You can contact Krishna through the portfolio contact form, email at ksuram1@umbc.edu, LinkedIn, or GitHub."
+      "answer": "You can reach Krishna Teja through:\n1. Email: ktjobs02@gmail.com\n2. LinkedIn: https://www.linkedin.com/in/krishna-teja-reddy-s-93b210231/\n3. GitHub: https://github.com/Krishnateja26?tab=repositories\n4. The contact form on this portfolio site"
     },
     {
       "question_patterns": [
@@ -406,6 +535,15 @@
       "mimic",
       "xray",
       "covid"
+    ],
+    "fintech": [
+      "finance",
+      "financial",
+      "accounting",
+      "fintech",
+      "quickbooks",
+      "reconciliation",
+      "mongodb"
     ]
   },
   "chatbot_guidance": {

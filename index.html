@@ -5,7 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Krishna Teja | Data Science Portfolio</title>
 
-    <link rel="stylesheet" href="Style.css">
+    <meta name="description" content="Krishna Teja Reddy Suram — Data Science graduate (UMBC) specializing in machine learning, deep learning, NLP, and analytics engineering. Explore projects in healthcare AI, RAG chatbots, and BI dashboards.">
+    <meta name="theme-color" content="#0a0a0a">
+    <link rel="canonical" href="https://krishnateja26.github.io/KrishnaTeja_Portfolio-/">
+
+    <!-- Open Graph / social share preview -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Krishna Teja | Data Science Portfolio">
+    <meta property="og:description" content="Data Science graduate (UMBC) specializing in machine learning, deep learning, NLP, and analytics engineering.">
+    <meta property="og:url" content="https://krishnateja26.github.io/KrishnaTeja_Portfolio-/">
+    <meta property="og:image" content="https://krishnateja26.github.io/KrishnaTeja_Portfolio-/Used-Images/hero-matrix-data-bg.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Krishna Teja | Data Science Portfolio">
+    <meta name="twitter:description" content="Data Science graduate (UMBC) specializing in machine learning, deep learning, NLP, and analytics engineering.">
+    <meta name="twitter:image" content="https://krishnateja26.github.io/KrishnaTeja_Portfolio-/Used-Images/hero-matrix-data-bg.png">
+
+    <link rel="icon" type="image/png" href="Used-Images/kt-logo.png">
+
+    <link rel="stylesheet" href="Style.css?v=6">
 
     <!-- Link to fontawesome for inserting social media icons -->
     <link
@@ -80,6 +98,17 @@
             <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
+            <li>
+                <!-- TODO: replace this href with your real Google Drive resume link once it's ready -->
+                <a
+                    href="https://drive.google.com/PLACEHOLDER_RESUME_LINK"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="nav-resume-btn"
+                >
+                    <i class="fa-solid fa-download"></i> Resume
+                </a>
+            </li>
         </ul>
     </nav>
 
@@ -388,9 +417,68 @@
 
         <div class="project-grid">
             <div class="project-card">
-                <img src="Used-Images/healthcare.jpeg" alt="Project 1">
+                <img src="Used-Images/finz-dashboard.png" alt="Finz accounting dashboard showing P&L by category, net profit, and QuickBooks sync status" class="project-img-fit">
+                <h3>Finz Accounting Data Pipeline</h3>
+                <p>Full-stack fintech app: bank transactions in, classified cash-basis P&amp;L out, synced to QuickBooks Online, and reconciled line-by-line to the cent.</p>
+
+                <div class="project-tags">
+                    <span class="project-tag">FastAPI</span>
+                    <span class="project-tag">MongoDB</span>
+                    <span class="project-tag">QuickBooks API</span>
+                    <span class="project-tag">Gemini API</span>
+                    <span class="project-tag">Docker</span>
+                </div>
+
+                <a
+                    href="https://github.com/Krishnateja26/Finz-Accounting-Pipeline-Challenge-07-27-2026"
+                    target="_blank"
+                    class="github-btn"
+                >
+                    <i class="fa-brands fa-github"></i> View on GitHub
+                </a>
+
+                <a
+                    href="https://finz-accounting-pipeline-challenge-07-27.onrender.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="live-demo-btn"
+                >
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> View Live Deployment
+                </a>
+            </div>
+
+            <div class="project-card">
+                <div class="project-card-icon"><i class="fa-solid fa-robot"></i></div>
+                <h3>RAG Chatbot with LlamaIndex & ChromaDB</h3>
+                <p>Retrieval-augmented chatbot that answers Reddit FAQ questions, with safety filtering and response evaluation scoring.</p>
+
+                <div class="project-tags">
+                    <span class="project-tag">RAG</span>
+                    <span class="project-tag">LlamaIndex</span>
+                    <span class="project-tag">ChromaDB</span>
+                    <span class="project-tag">Gemini</span>
+                </div>
+
+                <a
+                    href="https://github.com/Krishnateja26/AI-Powered-Chatbot-with-LlamaIndex-ChromaDB"
+                    target="_blank"
+                    class="github-btn"
+                >
+                    <i class="fa-brands fa-github"></i> View on GitHub
+                </a>
+            </div>
+
+            <div class="project-card">
+                <img src="Used-Images/healthcare.jpeg" alt="Healthcare analytics dashboard for patient mortality and readmission prediction">
                 <h3>Patient Mortality & Readmission (MIMIC-III)</h3>
                 <p>Healthcare analytics using clinical data to predict mortality and readmission.</p>
+
+                <div class="project-tags">
+                    <span class="project-tag">Python</span>
+                    <span class="project-tag">Machine Learning</span>
+                    <span class="project-tag">Healthcare Analytics</span>
+                    <span class="project-tag">Streamlit</span>
+                </div>
 
                 <a
                     href="https://github.com/Krishnateja26/Analysis-of-Patient-Mortality-and-Readmission-using-MIMIC-iii-Dataset"
@@ -402,12 +490,19 @@
             </div>
 
             <div class="project-card">
-                <img src="Used-Images/covid.jpeg" alt="Project 2">
-                <h3>COVID-19 Severity & Vaccination Analysis</h3>
-                <p>Statistical and ML analysis of COVID-19 outcomes in the US.</p>
+                <img src="Used-Images/Blog-How-to-Personalize-Power-BI-in-Your-Customizable-Reporting-Environment.png" alt="Power BI dashboard showing interactive business intelligence reporting" class="project-img-fit">
+                <h3>Power BI Dashboards Portfolio</h3>
+                <p>Interactive business intelligence dashboards for reporting, insights, and data storytelling.</p>
+
+                <div class="project-tags">
+                    <span class="project-tag">Power BI</span>
+                    <span class="project-tag">DAX</span>
+                    <span class="project-tag">Data Visualization</span>
+                    <span class="project-tag">Business Intelligence</span>
+                </div>
 
                 <a
-                    href="https://github.com/Krishnateja26/Analyzing-Factors-Influencing-COVID-19-Severity-and-Vaccination-Uptake-In-United-States-"
+                    href="https://github.com/Krishnateja26/Powet-BI-Dashboards"
                     target="_blank"
                     class="github-btn"
                 >
@@ -416,9 +511,16 @@
             </div>
 
             <div class="project-card">
-                <img src="Used-Images/xray.jpeg" alt="Project 3">
+                <img src="Used-Images/xray.jpeg" alt="Chest X-ray images used for COVID-19 severity deep learning classification">
                 <h3>COVID-19 Severity from X-Ray Images</h3>
                 <p>Deep learning model for severity prediction using medical imaging.</p>
+
+                <div class="project-tags">
+                    <span class="project-tag">CNN</span>
+                    <span class="project-tag">Deep Learning</span>
+                    <span class="project-tag">Computer Vision</span>
+                    <span class="project-tag">Flask</span>
+                </div>
 
                 <a
                     href="https://github.com/Krishnateja26/Prediction-of-COVID-19-Severity-from-X-Ray-Images-using-Deep-Learning-Approach"
@@ -430,9 +532,37 @@
             </div>
 
             <div class="project-card">
-                <img src="Used-Images/obesity.jpeg" alt="Project 4">
+                <img src="Used-Images/covid.jpeg" alt="Statistical charts analyzing COVID-19 severity and vaccination trends in the United States">
+                <h3>COVID-19 Severity & Vaccination Analysis</h3>
+                <p>Statistical and ML analysis of COVID-19 outcomes in the US.</p>
+
+                <div class="project-tags">
+                    <span class="project-tag">Python</span>
+                    <span class="project-tag">Statistical Analysis</span>
+                    <span class="project-tag">Machine Learning</span>
+                    <span class="project-tag">Data Visualization</span>
+                </div>
+
+                <a
+                    href="https://github.com/Krishnateja26/Analyzing-Factors-Influencing-COVID-19-Severity-and-Vaccination-Uptake-In-United-States-"
+                    target="_blank"
+                    class="github-btn"
+                >
+                    <i class="fa-brands fa-github"></i> View on GitHub
+                </a>
+            </div>
+
+            <div class="project-card">
+                <img src="Used-Images/obesity.jpeg" alt="Data visualization for obesity risk classification and feature analysis">
                 <h3>Obesity Classification using ML</h3>
                 <p>Classification and feature analysis for obesity risk prediction.</p>
+
+                <div class="project-tags">
+                    <span class="project-tag">Python</span>
+                    <span class="project-tag">Classification</span>
+                    <span class="project-tag">Feature Engineering</span>
+                    <span class="project-tag">Scikit-learn</span>
+                </div>
 
                 <a
                     href="https://github.com/Krishnateja26/Obesity-Classification-and-Data-Analysis-using-Machine-Learning"
@@ -444,12 +574,19 @@
             </div>
 
             <div class="project-card">
-                <img src="Used-Images/Blog-How-to-Personalize-Power-BI-in-Your-Customizable-Reporting-Environment.png" alt="Power BI Dashboards">
-                <h3>Power BI Dashboards</h3>
-                <p>Interactive business intelligence dashboards for reporting, insights, and data storytelling.</p>
+                <div class="project-card-icon"><i class="fa-solid fa-cloud-showers-heavy"></i></div>
+                <h3>Climate Change Data Analysis (Big Data)</h3>
+                <p>Distributed analysis of 8.6M U.S. weather events (2006-2016) using PySpark on Databricks to forecast extreme weather patterns.</p>
+
+                <div class="project-tags">
+                    <span class="project-tag">PySpark</span>
+                    <span class="project-tag">Databricks</span>
+                    <span class="project-tag">Big Data</span>
+                    <span class="project-tag">Predictive Modeling</span>
+                </div>
 
                 <a
-                    href="https://github.com/Krishnateja26/Powet-BI-Dashboards"
+                    href="https://github.com/Krishnateja26/Climate-Change-Data-Analysis-Using-Big-Data"
                     target="_blank"
                     class="github-btn"
                 >
@@ -596,9 +733,10 @@
     </div>
 
     <!-- link to javascript file -->
-    <script src="Script.js"></script>
-    <script src="Contact.js"></script>
-    <script src="Chatbot.js"></script>
+    <!-- Cache-busting query params: bump these whenever Script.js/Contact.js/Chatbot.js/Style.css change, so returning visitors' browsers don't keep serving a stale cached copy. -->
+    <script src="Script.js?v=6"></script>
+    <script src="Contact.js?v=6"></script>
+    <script src="Chatbot.js?v=6"></script>
     
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script>

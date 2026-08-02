@@ -1,0 +1,6 @@
+name = "krishnateja-portfolio-chatbot"
+main = "index.js"
+compatibility_date = "2026-08-02"
+
+# After first deploy, set the Gemini API key as a secret (never commit it to git):
+#   wrangler secret put GEMINI_API_KEY

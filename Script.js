@@ -215,19 +215,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /* =========================
-       CHATBOT UI
+       CHATBOT UI (open/close only —
+       message handling lives in Chatbot.js)
     ========================= */
-    function ktAppendMessage(text, sender = "bot") {
-        if (!ktChatMessages) return;
-
-        const msg = document.createElement("div");
-        msg.className = sender === "user" ? "kt-msg kt-user-msg" : "kt-msg kt-bot-msg";
-        msg.textContent = text;
-
-        ktChatMessages.appendChild(msg);
-        ktChatMessages.scrollTop = ktChatMessages.scrollHeight;
-    }
-
     if (ktChatToggle && ktChatPanel && ktChatbot) {
         ktChatToggle.addEventListener("click", () => {
             ktChatPanel.classList.add("active");
@@ -239,25 +229,6 @@ document.addEventListener("DOMContentLoaded", () => {
         ktChatClose.addEventListener("click", () => {
             ktChatPanel.classList.remove("active");
             ktChatbot.classList.remove("open");
-        });
-    }
-
-    if (ktChatForm && ktChatInput) {
-        ktChatForm.addEventListener("submit", (e) => {
-            e.preventDefault();
-
-            const text = ktChatInput.value.trim();
-            if (!text) return;
-
-            ktAppendMessage(text, "user");
-            ktChatInput.value = "";
-
-            setTimeout(() => {
-                ktAppendMessage(
-                    "Hi, I'm KrishnaBot. Right now this is the chatbot UI shell. Next, it can be connected to a RAG backend to answer questions about Krishna Teja accurately.",
-                    "bot"
-                );
-            }, 500);
         });
     }
 });
