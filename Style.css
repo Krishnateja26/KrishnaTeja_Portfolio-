@@ -2422,7 +2422,7 @@ footer p {
     }
 
     .edu-card h3 {
-        font-size: clamp(0.86rem, 4.3vw, 1.3rem);
+        font-size: clamp(0.66rem, 3.3vw, 1.15rem);
     }
 
     .edu-abbr {
@@ -2430,7 +2430,7 @@ footer p {
         width: 100%;
         text-align: center;
         margin-top: 0.25rem;
-        font-size: clamp(0.86rem, 4.3vw, 1.3rem);
+        font-size: clamp(0.66rem, 3.3vw, 1.15rem);
         font-weight: 800;
         color: #ffffff;
     }
@@ -3167,16 +3167,16 @@ body.loader-active {
         bottom: 0;
         width: 100%;
         max-width: none;
-        height: var(--kt-visual-height, 100svh);
-        max-height: var(--kt-visual-height, 100svh);
+        height: 100dvh;
+        max-height: 100dvh;
         border-radius: 0;
     }
 
     #kt-chatbot.open .kt-chatbot-panel.active:focus-within {
         top: 0;
         bottom: 0;
-        height: var(--kt-visual-height, 100svh);
-        max-height: var(--kt-visual-height, 100svh);
+        height: 100dvh;
+        max-height: 100dvh;
     }
 
     .kt-chatbot-header {
