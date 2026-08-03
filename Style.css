@@ -3074,7 +3074,7 @@ body.loader-active {
         background:
             linear-gradient(180deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.34)),
             linear-gradient(90deg, rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.18)),
-            url("Used-Images/hero-matrix-data-bg.png") 27% 76px / auto 100svh no-repeat !important;
+            url("Used-Images/hero-matrix-data-bg.png") 42% 76px / auto 100svh no-repeat !important;
     }
 
     #home.hero::before {
@@ -3123,12 +3123,72 @@ body.loader-active {
 @media (max-width: 480px) {
     #home.hero,
     #home {
-        background-position: 25% 68px !important;
+        background-position: 42% 68px !important;
         background-size: auto 100svh !important;
     }
 
     #home .hero-content-center {
         margin-top: clamp(1.2rem, 3vh, 2.4rem);
+    }
+}
+
+@media (max-width: 768px) {
+    #kt-chatbot.open {
+        left: 8px;
+        right: 8px;
+        bottom: max(8px, env(safe-area-inset-bottom));
+    }
+
+    #kt-chatbot.open .kt-chatbot-launch-wrap {
+        display: none;
+    }
+
+    #kt-chatbot.open .kt-chatbot-panel.active {
+        position: fixed;
+        left: 8px;
+        right: 8px;
+        bottom: max(8px, env(safe-area-inset-bottom));
+        width: auto;
+        max-width: none;
+        height: min(430px, calc(var(--kt-visual-height, 100dvh) - 18px));
+        max-height: calc(var(--kt-visual-height, 100dvh) - 18px);
+        border-radius: 16px;
+    }
+
+    #kt-chatbot.open .kt-chatbot-panel.active:focus-within {
+        top: 8px;
+        height: min(520px, calc(var(--kt-visual-height, 100dvh) - 16px));
+        max-height: calc(var(--kt-visual-height, 100dvh) - 16px);
+    }
+
+    .kt-chatbot-header {
+        flex-shrink: 0;
+        padding: 0.82rem 0.95rem;
+    }
+
+    .kt-chatbot-messages {
+        min-height: 0;
+        padding: 0.8rem;
+        overscroll-behavior: contain;
+    }
+
+    .kt-chatbot-inputbar {
+        flex-shrink: 0;
+        padding: 0.65rem;
+        gap: 0.48rem;
+    }
+
+    .kt-chatbot-inputbar input {
+        min-width: 0;
+        font-size: 16px;
+        line-height: 1.25;
+        padding: 0.78rem 0.82rem;
+    }
+
+    .kt-chat-send {
+        width: 48px;
+        height: 48px;
+        border-radius: 14px;
     }
 }
 

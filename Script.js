@@ -24,6 +24,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const ktChatInput = document.getElementById("ktChatInput");
     const ktChatMessages = document.getElementById("ktChatMessages");
 
+    function setVisualViewportHeight() {
+        const height = window.visualViewport ? window.visualViewport.height : window.innerHeight;
+        document.documentElement.style.setProperty("--kt-visual-height", `${height}px`);
+    }
+
+    setVisualViewportHeight();
+    window.addEventListener("resize", setVisualViewportHeight);
+    if (window.visualViewport) {
+        window.visualViewport.addEventListener("resize", setVisualViewportHeight);
+        window.visualViewport.addEventListener("scroll", setVisualViewportHeight);
+    }
+
 
     /* =========================
        MATRIX ENTRY LOADER
