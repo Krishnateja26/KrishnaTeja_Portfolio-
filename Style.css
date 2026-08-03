@@ -1476,45 +1476,46 @@ footer p {
     background-attachment: scroll;
 }
 
-/* These source images are fairly low-resolution, so background-size: cover
-   upscales them noticeably on narrow/high-density mobile screens. A darker
-   overlay on mobile mutes that softness into an intentional-looking texture
-   instead of visible blur, without swapping the underlying images. */
+/* The desktop source images are fairly low-resolution, so background-size:
+   cover upscaled them noticeably on narrow/high-density mobile screens.
+   -mobile.jpg copies are pre-scaled with a better resampling filter and a
+   mild sharpen pass, plus a darker overlay to mute any remaining softness.
+   Desktop keeps using the original files, completely untouched. */
 @media (max-width: 768px) {
     #about {
         background-image:
-            linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.7)),
-            url("Used-Images/about-bg.jpg");
+            linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.6)),
+            url("Used-Images/about-bg-mobile.jpg");
     }
 
     #education {
         background-image:
-            linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.7)),
-            url("Used-Images/education-bg.jpg");
+            linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.6)),
+            url("Used-Images/education-bg-mobile.jpg");
     }
 
     #skills {
         background-image:
-            linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.7)),
-            url("Used-Images/skills-bg.avif");
+            linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.6)),
+            url("Used-Images/skills-bg-mobile.jpg");
     }
 
     #experience {
         background-image:
-            linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.7)),
-            url("Used-Images/experience-bg.jpg");
+            linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.6)),
+            url("Used-Images/experience-bg-mobile.jpg");
     }
 
     #projects {
         background-image:
-            linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.7)),
-            url("Used-Images/projects-bg.jpg");
+            linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.6)),
+            url("Used-Images/projects-bg-mobile.jpg");
     }
 
     #contact.contact-section-v2 {
         background-image:
-            linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.7)),
-            url("Used-Images/contact-bg.jpg");
+            linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.6)),
+            url("Used-Images/contact-bg-mobile.jpg");
     }
 }
 
@@ -2526,7 +2527,7 @@ body.loader-active {
     z-index: 20000;
     display: grid;
     place-items: center start;
-    padding: clamp(1rem, 3vw, 3.2rem);
+    padding: clamp(1rem, 2.4vw, 2.7rem);
     background:
         linear-gradient(90deg, rgba(0, 0, 0, 0.84) 0%, rgba(0, 0, 0, 0.54) 34%, rgba(0, 0, 0, 0.08) 66%, rgba(0, 0, 0, 0.46) 100%),
         linear-gradient(180deg, rgba(0, 10, 4, 0.04), rgba(0, 0, 0, 0.58));
@@ -2580,21 +2581,21 @@ body.loader-active {
 .loader-console {
     position: relative;
     z-index: 2;
-    width: min(600px, calc(100vw - 2rem));
+    width: min(504px, calc(100vw - 2rem));
     max-height: calc(100svh - 2rem);
-    border: 1px solid rgba(183, 255, 210, 0.70);
+    border: 2px solid #39ff88;
     border-radius: 8px;
     overflow: hidden;
     background:
-        linear-gradient(145deg, rgba(0, 14, 7, 0.82), rgba(0, 0, 0, 0.58)),
-        radial-gradient(circle at 50% 0%, rgba(57, 255, 136, 0.20), transparent 24rem);
+        linear-gradient(145deg, rgba(0, 14, 7, 0.5), rgba(0, 0, 0, 0.44)),
+        radial-gradient(circle at 50% 0%, rgba(57, 255, 136, 0.16), transparent 24rem);
     box-shadow:
         0 34px 120px rgba(0, 0, 0, 0.72),
-        0 0 0 1px rgba(57, 255, 136, 0.20),
-        0 0 32px rgba(57, 255, 136, 0.28),
-        0 0 86px rgba(57, 255, 136, 0.18),
+        0 0 0 1px rgba(57, 255, 136, 0.55),
+        0 0 10px rgba(57, 255, 136, 0.65),
+        0 0 22px rgba(57, 255, 136, 0.35),
         inset 0 1px 0 rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(16px);
+    backdrop-filter: blur(10px);
 }
 
 .loader-console::before {
@@ -2639,7 +2640,7 @@ body.loader-active {
 }
 
 .loader-brand {
-    padding: clamp(1.8rem, 4vh, 3.1rem) clamp(1.2rem, 4vw, 2.55rem) 1rem;
+    padding: clamp(1.45rem, 3.2vh, 2.55rem) clamp(1.15rem, 3.2vw, 2.1rem) 0.95rem;
     text-align: left;
 }
 
@@ -2659,8 +2660,8 @@ body.loader-active {
 .loader-brand h1 {
     margin: 0;
     color: #ffffff;
-    max-width: 560px;
-    font-size: clamp(3rem, 5.6vw, 5.95rem);
+    max-width: 450px;
+    font-size: clamp(2.65rem, 4.7vw, 4.75rem);
     line-height: 0.92;
     letter-spacing: 0;
     text-shadow:
@@ -2670,7 +2671,7 @@ body.loader-active {
 }
 
 .loader-brand p {
-    max-width: 520px;
+    max-width: 480px;
     margin: 1rem 0 0;
     color: rgba(234, 255, 241, 0.84);
     font-size: clamp(1rem, 2vw, 1.22rem);
@@ -2687,10 +2688,14 @@ body.loader-active {
     width: auto;
     margin: 0 clamp(1rem, 4vw, 2.55rem) 1rem;
     padding: 1.6rem 1rem 0.9rem;
-    border: 1px solid rgba(57, 255, 136, 0.42);
+    border: 1.5px solid rgba(57, 255, 136, 0.85);
     border-radius: 8px;
-    background: rgba(0, 0, 0, 0.42);
+    background: rgba(0, 0, 0, 0.5);
     font-family: Consolas, "Courier New", monospace;
+    box-shadow:
+        0 0 6px rgba(57, 255, 136, 0.45),
+        0 0 14px rgba(57, 255, 136, 0.22),
+        inset 0 0 14px rgba(57, 255, 136, 0.06);
 }
 
 .terminal-controls {
@@ -2702,25 +2707,25 @@ body.loader-active {
 }
 
 .terminal-controls span {
-    width: 8px;
-    height: 8px;
+    width: 11px;
+    height: 11px;
     border-radius: 50%;
-    box-shadow: 0 0 8px currentColor;
+    box-shadow: 0 0 3px currentColor, 0 0 12px currentColor, 0 0 22px currentColor;
 }
 
 .terminal-controls span:nth-child(1) {
     color: #ff5f57;
-    background: currentColor;
+    background: #ff5f57;
 }
 
 .terminal-controls span:nth-child(2) {
     color: #ffbd2e;
-    background: currentColor;
+    background: #ffbd2e;
 }
 
 .terminal-controls span:nth-child(3) {
     color: #28c840;
-    background: currentColor;
+    background: #28c840;
 }
 
 .loader-terminal p {
@@ -2751,9 +2756,9 @@ body.loader-active {
     height: auto;
     margin: 0 clamp(1rem, 4vw, 2.55rem) 0;
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 48px;
+    grid-template-columns: minmax(0, 1fr) auto;
     align-items: center;
-    gap: 0.75rem;
+    gap: 1rem;
 }
 
 .loader-track {
@@ -2781,7 +2786,8 @@ body.loader-active {
     color: #eafff1;
     font-family: Consolas, "Courier New", monospace;
     font-size: 0.88rem;
-    text-align: right;
+    min-width: 48px;
+    text-align: center;
     text-shadow: 0 0 14px rgba(57, 255, 136, 0.64);
 }
 
@@ -2789,48 +2795,53 @@ body.loader-active {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: min(260px, calc(100% - 2rem));
+    width: min(250px, calc(100% - 2rem));
     min-height: 48px;
-    margin: clamp(0.65rem, 1.5vh, 1rem) auto clamp(2.75rem, 6.4vh, 4.25rem);
-    border: 2px solid #39ff88;
-    border-radius: 8px;
-    color: #041304;
-    background: linear-gradient(135deg, var(--accent), var(--accent-dark));
-    font-weight: 800;
-    letter-spacing: 0.05em;
+    margin: clamp(0.65rem, 1.5vh, 1rem) auto clamp(2.1rem, 5vh, 3.35rem);
+    border: 1px solid rgba(122, 255, 177, 0.78);
+    border-radius: 9px;
+    color: #050d08;
+    background: #2fc975;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: none;
+    letter-spacing: 0;
     cursor: pointer;
     opacity: 0;
     pointer-events: none;
     transform: translateY(8px);
+    text-shadow: none;
     box-shadow:
-        0 0 4px rgba(57, 255, 136, 0.24),
-        0 0 10px rgba(57, 255, 136, 0.10);
+        0 0 12px rgba(57, 255, 136, 0.5),
+        0 0 32px rgba(57, 255, 136, 0.22),
+        inset 0 1px 0 rgba(255, 255, 255, 0.24);
     transition:
         opacity 0.35s ease,
         transform 0.35s ease,
-        box-shadow 0.25s ease,
-        color 0.25s ease;
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.loader-enter::before {
+    content: "";
 }
 
 .loader-enter.is-ready {
     opacity: 1;
     pointer-events: auto;
     transform: translateY(0);
-    animation: enterReadyPulse 1.8s ease-in-out infinite;
 }
 
 .loader-enter:hover {
-    transform: translateY(-6px) scale(1.03);
-    border-color: #39ff88 !important;
-    color: #ffffff;
-    text-shadow:
-        0 0 10px var(--accent),
-        0 0 25px var(--accent-glow),
-        0 0 45px var(--accent-glow);
-    box-shadow:
-        0 0 10px var(--accent),
-        0 0 25px var(--accent-glow),
-        0 0 45px var(--accent-glow) !important;
+    background: #36df82;
+    border-color: #8cffbd;
+    color: #050d08;
+}
+
+.loader-enter:active {
+    color: #050d08;
 }
 
 @keyframes loaderGridDrift {
@@ -2848,19 +2859,6 @@ body.loader-active {
     93% { transform: translateX(1px); filter: drop-shadow(-2px 0 rgba(57, 255, 136, 0.34)); }
     94% { transform: translateX(-1px); filter: drop-shadow(2px 0 rgba(234, 255, 241, 0.18)); }
     95% { transform: translateX(0); filter: none; }
-}
-
-@keyframes enterReadyPulse {
-    0%, 100% {
-        box-shadow:
-            0 0 6px rgba(57, 255, 136, 0.40),
-            0 0 16px rgba(57, 255, 136, 0.22);
-    }
-    50% {
-        box-shadow:
-            0 0 10px rgba(57, 255, 136, 0.62),
-            0 0 30px rgba(57, 255, 136, 0.34);
-    }
 }
 
 #home.hero,
@@ -3013,9 +3011,9 @@ body.loader-active {
         width: 100%;
         max-height: calc(100svh - 1.5rem);
         background:
-            linear-gradient(145deg, rgba(0, 14, 7, 0.56), rgba(0, 0, 0, 0.32)),
-            radial-gradient(circle at 50% 0%, rgba(57, 255, 136, 0.16), transparent 20rem);
-        backdrop-filter: blur(5px);
+            linear-gradient(145deg, rgba(0, 14, 7, 0.58), rgba(0, 0, 0, 0.52)),
+            radial-gradient(circle at 50% 0%, rgba(57, 255, 136, 0.14), transparent 20rem);
+        backdrop-filter: blur(8px);
     }
 
     .loader-enter {
@@ -3076,7 +3074,7 @@ body.loader-active {
         background:
             linear-gradient(180deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.34)),
             linear-gradient(90deg, rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.18)),
-            url("Used-Images/hero-matrix-data-bg.png") 36% 76px / auto 100svh no-repeat !important;
+            url("Used-Images/hero-matrix-data-bg.png") 27% 76px / auto 100svh no-repeat !important;
     }
 
     #home.hero::before {
@@ -3125,7 +3123,7 @@ body.loader-active {
 @media (max-width: 480px) {
     #home.hero,
     #home {
-        background-position: 34% 68px !important;
+        background-position: 25% 68px !important;
         background-size: auto 100svh !important;
     }
 

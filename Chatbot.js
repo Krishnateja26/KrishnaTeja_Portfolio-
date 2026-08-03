@@ -5,6 +5,7 @@ let portfolioKnowledge = null;
 const WORKER_URL = "https://krishnateja-portfolio-chatbot.mura20004.workers.dev";
 
 let chatHistory = [];
+let lastProjectResults = [];
 
 async function loadPortfolioData() {
     try {
@@ -109,6 +110,36 @@ function meaningfulWords(text) {
     return text.toLowerCase().split(/\s+/).filter(word => word && !STOPWORDS.has(word));
 }
 
+function normalizeText(text) {
+    return text.toLowerCase().replace(/[^a-z0-9+#.\s-]/g, " ").replace(/\s+/g, " ").trim();
+}
+
+function hasAny(text, terms) {
+    return terms.some(term => text.includes(term));
+}
+
+function isShortAcknowledgement(query) {
+    return ["good", "ok", "okay", "great", "nice", "cool", "thanks", "thank you", "got it", "sounds good"]
+        .includes(normalizeText(query));
+}
+
+function looksLikeBadInput(query) {
+    const normalized = normalizeText(query);
+    if (!normalized) return true;
+
+    const compact = normalized.replace(/\s+/g, "");
+    const words = normalized.split(" ").filter(Boolean);
+    const knownShortTerms = [
+        "hi", "hello", "hey", "email", "linkedin", "github", "contact", "python", "sql",
+        "fastapi", "mongodb", "project", "projects", "experience", "internship", "temple", "wiki"
+    ];
+
+    if (compact.length >= 8 && !/[aeiou]/.test(compact)) return true;
+    if (words.length <= 2 && !hasAny(normalized, knownShortTerms)) return true;
+
+    return false;
+}
+
 const SENSITIVE_TOPIC_WORDS = [
     "birthday", "birth date", "date of birth", "dob", "how old", " age ",
     "religion", "religious", "hindu", "muslim", "christian", "jewish", "atheist",
@@ -180,7 +211,7 @@ function getBestMatches(query) {
    Gemini-backed worker is instructed to do as well)
 ========================= */
 function scoreProject(expandedQuery, project) {
-    const text = `${project.name} ${project.category} ${project.summary} ${(project.keywords || []).join(" ")}`.toLowerCase();
+    const text = `${project.name} ${project.category} ${project.summary} ${(project.highlights || []).join(" ")} ${(project.keywords || []).join(" ")}`.toLowerCase();
     const words = meaningfulWords(expandedQuery);
     let score = 0;
 
@@ -193,6 +224,19 @@ function scoreProject(expandedQuery, project) {
     });
 
     return score;
+}
+
+function isBroadProjectQuery(lowerQuery) {
+    return hasAny(lowerQuery, [
+        "what projects",
+        "his projects",
+        "worked on",
+        "portfolio projects",
+        "tell me about his projects"
+    ]) && !hasAny(lowerQuery, [
+        "python", "sql", "fastapi", "mongodb", "healthcare", "rag", "chatbot", "ml",
+        "machine learning", "power bi", "dashboard", "flask", "streamlit"
+    ]);
 }
 
 function isProjectQuery(lowerQuery, expandedQuery) {
@@ -225,11 +269,189 @@ function formatProjectList(projects) {
         .join("\n");
 }
 
+function getAllSkills() {
+    if (!portfolioKnowledge?.skills) return [];
+    return Object.values(portfolioKnowledge.skills).flat().map(skill => skill.toLowerCase());
+}
+
+function getExperienceByTerm(term) {
+    return (portfolioKnowledge?.experience || []).find(item =>
+        `${item.type} ${item.summary}`.toLowerCase().includes(term)
+    );
+}
+
+function formatExperience(item, detailLimit = 4) {
+    if (!item) return "";
+    const details = item.details ? item.details.slice(0, detailLimit).join(" ") : "";
+    return `${item.type}: ${item.summary}${details ? " " + details : ""}`;
+}
+
+function getRelevantProjects(expandedQuery, limit = 3) {
+    let projects = getTopProjects(expandedQuery, limit);
+
+    if (projects.length === 0 && Array.isArray(portfolioKnowledge?.projects)) {
+        projects = portfolioKnowledge.projects
+            .filter(project => scoreProject(expandedQuery, project) > 0)
+            .slice(0, limit);
+    }
+
+    lastProjectResults = projects;
+    return projects;
+}
+
+function formatProjectDetail(project) {
+    if (!project) return "";
+
+    let answer = `${project.name}: ${project.summary}`;
+    if (project.highlights?.length) {
+        answer += `\nKey details: ${project.highlights.slice(0, 3).join(" ")}`;
+    }
+    if (project.github) answer += `\nGitHub: ${project.github}`;
+    if (project.live_demo) answer += `\nLive demo: ${project.live_demo}`;
+    return answer;
+}
+
+function answerProjectFollowup(lowerQuery) {
+    if (!hasAny(lowerQuery, ["tell me more", "more about", "first one", "second one", "third one"])) return null;
+
+    const ordinalMap = {
+        "first": 0,
+        "1st": 0,
+        "one": 0,
+        "second": 1,
+        "2nd": 1,
+        "two": 1,
+        "third": 2,
+        "3rd": 2,
+        "three": 2
+    };
+    const key = Object.keys(ordinalMap).find(term => lowerQuery.includes(term));
+    const index = key ? ordinalMap[key] : 0;
+
+    return lastProjectResults[index] ? formatProjectDetail(lastProjectResults[index]) : null;
+}
+
+function answerContactQuery(lowerQuery) {
+    const profile = portfolioKnowledge?.profile;
+    if (!profile) return null;
+
+    if (hasAny(lowerQuery, ["email", "mail"])) {
+        return `Yes. Krishna Teja's email is ${profile.email}.`;
+    }
+
+    if (lowerQuery.includes("linkedin") || lowerQuery.includes("linked in")) {
+        return `Yes. Krishna Teja has a LinkedIn profile: ${profile.linkedin}`;
+    }
+
+    if (lowerQuery.includes("github")) {
+        return `Yes. Krishna Teja's GitHub profile is ${profile.github}.`;
+    }
+
+    if (hasAny(lowerQuery, ["contact", "reach", "connect"])) {
+        return `You can reach Krishna Teja here:\nEmail: ${profile.email}\nLinkedIn: ${profile.linkedin}\nGitHub: ${profile.github}`;
+    }
+
+    return null;
+}
+
+function answerExperienceQuery(lowerQuery) {
+    if (hasAny(lowerQuery, ["temple allen", "temple"])) {
+        const temple = getExperienceByTerm("temple allen");
+        return temple
+            ? `Yes. Krishna Teja is working at Temple Allen Industries from April 2026 to present. ${formatExperience(temple, 5)}`
+            : null;
+    }
+
+    if (hasAny(lowerQuery, ["wiki charities", "wikicharities", "wiki"])) {
+        const wiki = getExperienceByTerm("wikicharities");
+        return wiki
+            ? `Yes. Krishna Teja worked at WikiCharities from February to April 2026. ${formatExperience(wiki, 4)}`
+            : null;
+    }
+
+    if (hasAny(lowerQuery, ["internship", "internships", "intern"])) {
+        const temple = getExperienceByTerm("temple allen");
+        const wiki = getExperienceByTerm("wikicharities");
+        return [
+            temple ? `Current internship: Krishna Teja is working at Temple Allen Industries from April 2026 to present. ${temple.details.slice(0, 3).join(" ")}` : "",
+            wiki ? `Past internship: Krishna Teja worked at WikiCharities from February to April 2026. ${wiki.details.slice(0, 3).join(" ")}` : ""
+        ].filter(Boolean).join("\n\n");
+    }
+
+    if (hasAny(lowerQuery, ["work experience", "professional experience", "experience"])) {
+        return (portfolioKnowledge?.experience || []).slice(0, 3)
+            .map(item => formatExperience(item, 3))
+            .join("\n\n");
+    }
+
+    return null;
+}
+
+function answerSkillQuery(lowerQuery, expandedQuery) {
+    const skills = getAllSkills();
+    const skillTerms = [
+        "python", "sql", "fastapi", "mongodb", "machine learning", "ml", "data analysis",
+        "power bi", "tableau", "flask", "streamlit", "rag", "llamaindex", "chromadb"
+    ];
+    const askedSkills = skillTerms.filter(skill => lowerQuery.includes(skill));
+
+    if (askedSkills.length === 0 && !hasAny(lowerQuery, ["know", "worked with", "experience with", "used"])) {
+        return null;
+    }
+
+    const matchedSkills = askedSkills.filter(skill => {
+        if (skill === "ml") return skills.includes("classification") || skills.includes("regression");
+        return skills.some(item => item.includes(skill));
+    });
+
+    if (matchedSkills.length === 0) return null;
+
+    if (lowerQuery.includes("python")) {
+        expandedQuery += " python machine learning data analysis fastapi flask pyspark pandas numpy";
+    }
+
+    const readableSkills = matchedSkills.map(skill => {
+        if (skill === "ml") return "machine learning";
+        if (skill === "python") return "Python";
+        if (skill === "sql") return "SQL";
+        if (skill === "fastapi") return "FastAPI";
+        if (skill === "mongodb") return "MongoDB";
+        return skill;
+    });
+    let projects = getRelevantProjects(expandedQuery, 3);
+    if (lowerQuery.includes("sql")) {
+        projects = projects.filter(project => {
+            const text = `${project.name} ${project.summary} ${(project.highlights || []).join(" ")} ${(project.keywords || []).join(" ")}`.toLowerCase();
+            return hasAny(text, ["sql", "mysql", "mariadb", "sql-backed", "data pipeline"]);
+        });
+        lastProjectResults = projects;
+    }
+    const temple = getExperienceByTerm("temple allen");
+
+    let answer = `Yes. Krishna Teja knows ${readableSkills.join(", ")}.`;
+    if (temple && hasAny(expandedQuery, ["python", "sql", "fastapi", "mongodb", "data analysis"])) {
+        answer += " He has used related skills in work experience at Temple Allen Industries, including automation, analytics, SQL-backed workflows, Python, and internal platform development.";
+    }
+    if (projects.length > 0) {
+        answer += `\nRelevant project${projects.length > 1 ? "s" : ""}:\n${formatProjectList(projects)}`;
+    }
+
+    return answer;
+}
+
 function generateAnswer(query) {
-    const lowerQuery = query.toLowerCase().trim();
+    const lowerQuery = normalizeText(query);
 
     if (!portfolioKnowledge) {
         return "I’m having trouble loading Krishna Teja’s information right now. Please try again in a moment.";
+    }
+
+    if (isShortAcknowledgement(lowerQuery)) {
+        return "Glad that helps. Ask me anything else about Krishna Teja's projects, skills, experience, education, or contact details.";
+    }
+
+    if (looksLikeBadInput(lowerQuery)) {
+        return "Please check your input. It does not look like a proper question yet. Try asking about Krishna Teja's skills, projects, work experience, internships, email, or LinkedIn.";
     }
 
     if (["hi", "hello", "hey"].some(word => lowerQuery === word || lowerQuery.startsWith(word + " "))) {
@@ -242,18 +464,36 @@ function generateAnswer(query) {
 
     const expandedQuery = getAliases(lowerQuery, portfolioKnowledge.search_aliases);
 
+    const followupAnswer = answerProjectFollowup(lowerQuery);
+    if (followupAnswer) return followupAnswer;
+
+    const contactAnswer = answerContactQuery(lowerQuery);
+    if (contactAnswer) return contactAnswer;
+
+    const experienceAnswer = answerExperienceQuery(lowerQuery);
+    if (experienceAnswer) return experienceAnswer;
+
+    const skillAnswer = answerSkillQuery(lowerQuery, expandedQuery);
+    if (skillAnswer) return skillAnswer;
+
     if (isProjectQuery(lowerQuery, expandedQuery)) {
-        let topProjects = getTopProjects(expandedQuery, 3);
+        let topProjects = isBroadProjectQuery(lowerQuery)
+            ? portfolioKnowledge.projects.slice(0, 3)
+            : getRelevantProjects(expandedQuery, 3);
         let intro;
+        lastProjectResults = topProjects;
 
         if (topProjects.length > 0) {
-            intro = topProjects.length === 1
+            intro = isBroadProjectQuery(lowerQuery)
+                ? "Here are a few of his key projects:"
+                : topProjects.length === 1
                 ? "Here's the project that best matches that:"
                 : `Here are the ${topProjects.length} projects that best match that:`;
         } else if (Array.isArray(portfolioKnowledge.projects) && portfolioKnowledge.projects.length > 0) {
             // Broad question ("what projects has he worked on") with no specific
             // technology mentioned to rank against — show the top few as-is.
             topProjects = portfolioKnowledge.projects.slice(0, 3);
+            lastProjectResults = topProjects;
             intro = "Here are a few of his key projects:";
         }
 
@@ -383,12 +623,7 @@ async function handleChatSend() {
 
     const typingEl = appendTypingIndicator();
 
-    let answer;
-    try {
-        answer = await askGemini(query);
-    } catch (error) {
-        answer = generateAnswer(query);
-    }
+    const answer = generateAnswer(query);
 
     removeTypingIndicator(typingEl);
     appendMessage(answer, "bot");
