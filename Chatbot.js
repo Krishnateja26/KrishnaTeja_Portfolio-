@@ -202,7 +202,7 @@ function getBestMatches(query) {
     return scored
         .filter(item => item.score >= 4)
         .sort((a, b) => b.score - a.score)
-        .slice(0, 3);
+        .slice(0, 1);
 }
 
 /* =========================
@@ -623,7 +623,12 @@ async function handleChatSend() {
 
     const typingEl = appendTypingIndicator();
 
-    const answer = generateAnswer(query);
+    let answer;
+    try {
+        answer = await askGemini(query);
+    } catch (error) {
+        answer = generateAnswer(query);
+    }
 
     removeTypingIndicator(typingEl);
     appendMessage(answer, "bot");
