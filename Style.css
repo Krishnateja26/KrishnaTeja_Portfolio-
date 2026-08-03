@@ -3074,7 +3074,7 @@ body.loader-active {
         background:
             linear-gradient(180deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.34)),
             linear-gradient(90deg, rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.18)),
-            url("Used-Images/hero-matrix-data-bg.png") 42% 76px / auto 100svh no-repeat !important;
+            url("Used-Images/hero-matrix-data-bg.png") 36% 76px / auto 100svh no-repeat !important;
     }
 
     #home.hero::before {
@@ -3123,7 +3123,7 @@ body.loader-active {
 @media (max-width: 480px) {
     #home.hero,
     #home {
-        background-position: 42% 68px !important;
+        background-position: 36% 68px !important;
         background-size: auto 100svh !important;
     }
 
