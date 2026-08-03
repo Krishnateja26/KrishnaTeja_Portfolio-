@@ -842,9 +842,13 @@ nav a:hover {
     width: 100%;
     text-align: center;
     margin-top: 0.3rem;
-    color: var(--accent);
+    color: #ffffff;
     font-size: 0.92rem;
     opacity: 0.9;
+}
+
+.edu-abbr {
+    display: none;
 }
 
 .edu-card img {
@@ -2433,8 +2437,22 @@ footer p {
     .edu-card {
         width: 100%;
         max-width: 520px;
-        text-align: left;
+        text-align: center;
         padding: 1.6rem;
+    }
+
+    .edu-card h3 {
+        font-size: clamp(0.86rem, 4.3vw, 1.3rem);
+    }
+
+    .edu-abbr {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-top: 0.25rem;
+        font-size: clamp(0.86rem, 4.3vw, 1.3rem);
+        font-weight: 800;
+        color: #ffffff;
     }
 
     .experience-item {
@@ -3162,21 +3180,23 @@ body.loader-active {
 
     #kt-chatbot.open .kt-chatbot-panel.active {
         position: fixed;
-        left: 8px;
-        right: 8px;
-        bottom: max(8px, env(safe-area-inset-bottom));
-        width: auto;
+        inset: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 100%;
         max-width: none;
-        height: min(430px, calc(100svh - 96px));
-        max-height: calc(100svh - 96px);
-        border-radius: 16px;
+        height: var(--kt-visual-height, 100svh);
+        max-height: var(--kt-visual-height, 100svh);
+        border-radius: 0;
     }
 
     #kt-chatbot.open .kt-chatbot-panel.active:focus-within {
-        top: auto;
-        bottom: max(8px, env(safe-area-inset-bottom));
-        height: min(430px, calc(100svh - 96px));
-        max-height: calc(100svh - 96px);
+        top: 0;
+        bottom: 0;
+        height: var(--kt-visual-height, 100svh);
+        max-height: var(--kt-visual-height, 100svh);
     }
 
     .kt-chatbot-header {

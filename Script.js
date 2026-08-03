@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.body.style.left = "";
         document.body.style.right = "";
         document.body.style.width = "";
-        window.scrollTo(0, chatScrollY);
+        window.scrollTo({ top: chatScrollY, left: 0, behavior: "instant" });
     }
 
 

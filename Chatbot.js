@@ -131,7 +131,8 @@ function looksLikeBadInput(query) {
     const words = normalized.split(" ").filter(Boolean);
     const knownShortTerms = [
         "hi", "hello", "hey", "email", "linkedin", "github", "contact", "python", "sql",
-        "fastapi", "mongodb", "project", "projects", "experience", "internship", "temple", "wiki"
+        "fastapi", "mongodb", "project", "projects", "experience", "internship", "temple", "wiki",
+        "krishna", "teja"
     ];
 
     if (compact.length >= 8 && !/[aeiou]/.test(compact)) return true;
