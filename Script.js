@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const ktChatForm = document.getElementById("ktChatForm");
     const ktChatInput = document.getElementById("ktChatInput");
     const ktChatMessages = document.getElementById("ktChatMessages");
+    let chatScrollY = 0;
 
     function setVisualViewportHeight() {
         const height = window.visualViewport ? window.visualViewport.height : window.innerHeight;
@@ -34,6 +35,24 @@ document.addEventListener("DOMContentLoaded", () => {
     if (window.visualViewport) {
         window.visualViewport.addEventListener("resize", setVisualViewportHeight);
         window.visualViewport.addEventListener("scroll", setVisualViewportHeight);
+    }
+
+    function lockPageForChat() {
+        chatScrollY = window.scrollY || document.documentElement.scrollTop || 0;
+        document.body.style.position = "fixed";
+        document.body.style.top = `-${chatScrollY}px`;
+        document.body.style.left = "0";
+        document.body.style.right = "0";
+        document.body.style.width = "100%";
+    }
+
+    function unlockPageForChat() {
+        document.body.style.position = "";
+        document.body.style.top = "";
+        document.body.style.left = "";
+        document.body.style.right = "";
+        document.body.style.width = "";
+        window.scrollTo(0, chatScrollY);
     }
 
 
@@ -234,6 +253,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ktChatToggle.addEventListener("click", () => {
             ktChatPanel.classList.add("active");
             ktChatbot.classList.add("open");
+            lockPageForChat();
         });
     }
 
@@ -241,6 +261,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ktChatClose.addEventListener("click", () => {
             ktChatPanel.classList.remove("active");
             ktChatbot.classList.remove("open");
+            unlockPageForChat();
         });
     }
 });

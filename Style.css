@@ -3150,15 +3150,16 @@ body.loader-active {
         bottom: max(8px, env(safe-area-inset-bottom));
         width: auto;
         max-width: none;
-        height: min(430px, calc(var(--kt-visual-height, 100dvh) - 18px));
-        max-height: calc(var(--kt-visual-height, 100dvh) - 18px);
+        height: min(430px, calc(100svh - 96px));
+        max-height: calc(100svh - 96px);
         border-radius: 16px;
     }
 
     #kt-chatbot.open .kt-chatbot-panel.active:focus-within {
-        top: 8px;
-        height: min(520px, calc(var(--kt-visual-height, 100dvh) - 16px));
-        max-height: calc(var(--kt-visual-height, 100dvh) - 16px);
+        top: auto;
+        bottom: max(8px, env(safe-area-inset-bottom));
+        height: min(430px, calc(100svh - 96px));
+        max-height: calc(100svh - 96px);
     }
 
     .kt-chatbot-header {
