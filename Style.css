@@ -3160,23 +3160,21 @@ body.loader-active {
 
     #kt-chatbot.open .kt-chatbot-panel.active {
         position: fixed;
-        inset: 0;
         left: 0;
         right: 0;
-        top: 0;
-        bottom: 0;
+        bottom: auto;
+        top: var(--kt-visual-offset-top, 0px);
         width: 100%;
         max-width: none;
-        height: 100dvh;
-        max-height: 100dvh;
+        height: var(--kt-visual-height, 100dvh);
+        max-height: var(--kt-visual-height, 100dvh);
         border-radius: 0;
     }
 
     #kt-chatbot.open .kt-chatbot-panel.active:focus-within {
-        top: 0;
-        bottom: 0;
-        height: 100dvh;
-        max-height: 100dvh;
+        top: var(--kt-visual-offset-top, 0px);
+        height: var(--kt-visual-height, 100dvh);
+        max-height: var(--kt-visual-height, 100dvh);
     }
 
     .kt-chatbot-header {

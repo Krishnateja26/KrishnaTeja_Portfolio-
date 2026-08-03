@@ -373,16 +373,19 @@ function answerExperienceQuery(lowerQuery) {
     if (hasAny(lowerQuery, ["internship", "internships", "intern"])) {
         const temple = getExperienceByTerm("temple allen");
         const wiki = getExperienceByTerm("wikicharities");
-        return [
+        const parts = [
             temple ? `Current internship: Krishna Teja is working at Temple Allen Industries from April 2026 to present. ${temple.details.slice(0, 3).join(" ")}` : "",
             wiki ? `Past internship: Krishna Teja worked at WikiCharities from February to April 2026. ${wiki.details.slice(0, 3).join(" ")}` : ""
-        ].filter(Boolean).join("\n\n");
+        ].filter(Boolean);
+        if (parts.length === 0) return null;
+        return `${parts.join("\n\n")}\n\nWant the full detail on either one?`;
     }
 
     if (hasAny(lowerQuery, ["work experience", "professional experience", "experience"])) {
-        return (portfolioKnowledge?.experience || []).slice(0, 3)
-            .map(item => formatExperience(item, 3))
-            .join("\n\n");
+        const items = (portfolioKnowledge?.experience || []).slice(0, 4);
+        if (items.length === 0) return null;
+        const summary = items.map(item => `• ${item.type}: ${item.summary}`).join("\n");
+        return `Here's an overview of Krishna Teja's experience:\n${summary}\n\nWant more detail on a specific one — Temple Allen Industries, WikiCharities, or his academic projects?`;
     }
 
     return null;
@@ -499,7 +502,8 @@ function generateAnswer(query) {
         }
 
         if (topProjects.length > 0) {
-            return `${intro}\n${formatProjectList(topProjects)}`;
+            const followup = topProjects.length > 1 ? "\n\nWant more detail on any of these?" : "";
+            return `${intro}\n${formatProjectList(topProjects)}${followup}`;
         }
     }
 

@@ -26,8 +26,11 @@ document.addEventListener("DOMContentLoaded", () => {
     let chatScrollY = 0;
 
     function setVisualViewportHeight() {
-        const height = window.visualViewport ? window.visualViewport.height : window.innerHeight;
+        const vv = window.visualViewport;
+        const height = vv ? vv.height : window.innerHeight;
+        const offsetTop = vv ? vv.offsetTop : 0;
         document.documentElement.style.setProperty("--kt-visual-height", `${height}px`);
+        document.documentElement.style.setProperty("--kt-visual-offset-top", `${offsetTop}px`);
     }
 
     setVisualViewportHeight();

@@ -552,7 +552,7 @@
   },
   "chatbot_guidance": {
     "tone": "professional, concise, helpful, and confident",
-    "fallback_message": "I may not have that exact detail yet, but I can help with Krishna Teja's background, education, skills, projects, experience, and contact information.",
+    "fallback_message": "Not sure I caught that — what would you like to know about Krishna Teja? I can talk about his professional experience, technical skills, specific projects, education, or how to contact him.",
     "response_rules": [
       "Answer only using the information available in this knowledge file.",
       "Do not invent employers, dates, or achievements that are not present.",
